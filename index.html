@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mustafa Özger</title>
+  <meta name="description" content="Academic homepage of Mustafa Özger." />
+  <style>
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size:18px;
+      line-height:1.6;
+      color:#222;
+      background:#fff;
+    }
+    .container{
+      max-width:960px;
+      margin:0 auto;
+      padding:28px 22px 48px;
+    }
+    a{color:#0b57a3;text-decoration:none}
+    a:hover{text-decoration:underline}
+    header{
+      margin-bottom:26px;
+    }
+    .topnav{
+      display:flex;
+      flex-wrap:wrap;
+      gap:18px;
+      margin-bottom:18px;
+      font-size:17px;
+    }
+    h1{
+      font-size:42px;
+      margin:0 0 18px 0;
+      font-weight:700;
+    }
+    h2{
+      font-size:28px;
+      margin:34px 0 10px 0;
+      font-weight:700;
+      border-bottom:1px solid #ddd;
+      padding-bottom:6px;
+    }
+    h3{
+      font-size:21px;
+      margin:18px 0 6px 0;
+      font-weight:700;
+    }
+    p{margin:10px 0}
+    .intro{
+      display:grid;
+      grid-template-columns:180px 1fr;
+      gap:28px;
+      align-items:start;
+    }
+    .portrait{
+      width:180px;
+      border:1px solid #d8d8d8;
+    }
+    .meta{
+      margin:6px 0 0 0;
+      color:#444;
+    }
+    ul, ol{
+      margin:8px 0 8px 24px;
+      padding:0;
+    }
+    li{margin:6px 0}
+    .news-list li{margin-bottom:10px}
+    .small{
+      color:#555;
+      font-size:16px;
+    }
+    .footer{
+      margin-top:40px;
+      padding-top:16px;
+      border-top:1px solid #ddd;
+      color:#555;
+      font-size:16px;
+    }
+    @media (max-width:700px){
+      .intro{
+        grid-template-columns:1fr;
+      }
+      .portrait{
+        width:150px;
+      }
+      h1{font-size:34px}
+      body{font-size:17px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <nav class="topnav">
+        <a href="#about">About Me</a>
+        <a href="#research">Research Interests</a>
+        <a href="#news">News</a>
+        <a href="#publications">Publications</a>
+        <a href="#experience">Experiences</a>
+        <a href="#teaching">Teaching</a>
+      </nav>
+      <h1>Mustafa Özger</h1>
+      <div class="intro">
+        <img class="portrait" src="assets/avatar.svg" alt="Portrait placeholder for Mustafa Özger" />
+        <div>
+          <p><strong>Assistant Professor</strong><br>
+          Department of Electronic Systems, Aalborg University, Copenhagen, Denmark<br>
+          Researcher, KTH Royal Institute of Technology, Stockholm, Sweden</p>
+
+          <p class="meta">
+            Email: <a href="mailto:mozger@es.aau.dk">mozger@es.aau.dk</a><br>
+            ORCID: <a href="https://orcid.org/0000-0001-8517-7996" target="_blank" rel="noopener">0000-0001-8517-7996</a><br>
+            <a href="https://scholar.google.com/citations?hl=en&user=sfnbK9cAAAAJ" target="_blank" rel="noopener">Google Scholar</a> |
+            <a href="https://vbn.aau.dk/en/persons/mozger/" target="_blank" rel="noopener">AAU Profile</a> |
+            <a href="https://www.kth.se/profile/ozger?l=en" target="_blank" rel="noopener">KTH Profile</a> |
+            <a href="assets/CV_Mustafa_Ozger.pdf" target="_blank" rel="noopener">CV</a>
+          </p>
+
+          <p id="about">
+            I am an Assistant Professor at Aalborg University and a Researcher at KTH Royal Institute of Technology. My work focuses on
+            machine learning for engineering systems, information-theoretic learning, wireless communications, AI-native network management,
+            non-terrestrial networks, uncertainty-aware inference, localisation, and engineering decision support.
+          </p>
+
+          <p>
+            More broadly, I work on future telecommunication systems and machine learning for engineering, with research spanning wireless and
+            networked systems, 5G/6G and non-terrestrial networks, mobility management, system-level optimisation, and dependable learning-based
+            control for resource-constrained environments.
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <section id="research">
+      <h2>Research Interests</h2>
+      <ul>
+        <li>Machine learning for engineering systems, including reinforcement learning, multi-agent and hierarchical RL, uncertainty-aware modelling, and decision support.</li>
+        <li>Information-theoretic learning and uncertainty, including model selection, dataset design, representation learning, and reliable inference under data scarcity and distribution shift.</li>
+        <li>Communication systems and networked engineering, including wireless networks, non-terrestrial networks, resource allocation, mobility management, URLLC, localisation, sensing, and signal processing.</li>
+        <li>System-level networking and network management across terrestrial, aerial, and non-terrestrial systems.</li>
+      </ul>
+    </section>
+
+    <section id="news">
+      <h2>News / Updates</h2>
+      <ul class="news-list">
+        <li><strong>2026:</strong> Tutorial at IEEE EuCNC 2026 on 6G connectivity for flying vehicles.</li>
+        <li><strong>2026:</strong> Organizer of the EuCNC 2026 special session on unified terrestrial and non-terrestrial networks for 6G.</li>
+        <li><strong>2026:</strong> Tutorial at IEEE VTC-Spring 2026 on 6G non-terrestrial networks, Open RAN, handover, and service availability.</li>
+        <li><strong>2025:</strong> Associate Editor, IEEE Transactions on Vehicular Technology.</li>
+        <li><strong>2024:</strong> Associate Editor, IEEE Transactions on Mobile Computing.</li>
+      </ul>
+    </section>
+
+    <section id="publications">
+      <h2>Selected Publications</h2>
+      <ol>
+        <li>Q. Wang, S. Zhang, M. Ozger and C. Cavdar, “Independent PPO-based Robust and Scalable Three-dimensional Configuration for Green Massive MIMO Networks,” <em>IEEE Transactions on Green Communications and Networking</em>, Early Access, 2026.</li>
+        <li>I. A. Meer, K.-L. Besser, M. Ozger, D. Schupke, H. V. Poor, and C. Cavdar, “Hierarchical Multi-Agent DRL-Based Dynamic Cluster Reconfiguration for UAV Mobility Management,” <em>IEEE Transactions on Cognitive Communications and Networking</em>, 2025.</li>
+        <li>S. Zhang, M. Ozger, S. S. S. G. Seeram, I. Godor, L. Feltrin, A. Nordlow, J. Pfeifle, L. Toka, G. Biczok, D. A. Schupke, and C. Cavdar, “6G for Connected Sky: Holistic Adaptive Combined Airspace and Non-Terrestrial Network Architecture,” <em>IEEE Wireless Communications</em>, 2025.</li>
+        <li>I. A. Meer, M. Ozger, D. Schupke, and C. Cavdar, “Mobility Management for Cellular-Connected UAVs: Model-Based Versus Learning-Based Approaches for Service Availability,” <em>IEEE Transactions on Network and Service Management</em>, 2024.</li>
+        <li>A. Baltaci, E. Dinc, M. Ozger, A. Alabbasi, C. Cavdar, and D. Schupke, “A Survey of Wireless Networks for Future Aerial Communications (FACOM),” <em>IEEE Communications Surveys & Tutorials</em>, 2021.</li>
+        <li>A. Azari, M. Ozger, and C. Cavdar, “Risk-Aware Resource Allocation for URLLC: Challenges and Strategies with Machine Learning,” <em>IEEE Communications Magazine</em>, 2019.</li>
+      </ol>
+      <p><a href="publications.html">Full publication list</a></p>
+    </section>
+
+    <section id="experience">
+      <h2>Experiences</h2>
+
+      <h3>Academic Appointments</h3>
+      <ul>
+        <li><strong>Assistant Professor</strong>, Aalborg University, Copenhagen, Denmark, Sep. 2024–Present.</li>
+        <li><strong>Researcher</strong>, KTH Royal Institute of Technology, Stockholm, Sweden, Jan. 2018–Present.</li>
+        <li><strong>Research and Teaching Assistant</strong>, Koç University, Istanbul, Turkey, Sep. 2011–Dec. 2017.</li>
+      </ul>
+
+      <h3>Education</h3>
+      <ul>
+        <li><strong>Ph.D. in Electrical & Electronics Engineering</strong>, Koç University, 2017.</li>
+        <li><strong>M.Sc. in Electrical & Electronics Engineering</strong>, Koç University, 2013.</li>
+        <li><strong>B.S. in Electrical & Electronics Engineering</strong>, Middle East Technical University, 2011.</li>
+      </ul>
+
+      <h3>Selected Projects</h3>
+      <ul>
+        <li><strong>3D-NET</strong>, Eureka CELTIC-NEXT, technical coordination and proposal leadership.</li>
+        <li><strong>6G-SKY</strong>, Eureka CELTIC-NEXT, project management and technical coordination.</li>
+        <li><strong>Self-Learning Drone Surveillance</strong>, Vinnova Project.</li>
+        <li><strong>Bilateral Airbus projects</strong> on aerial connectivity and security architectures.</li>
+      </ul>
+    </section>
+
+    <section id="teaching">
+      <h2>Teaching & Service</h2>
+
+      <h3>Teaching</h3>
+      <ul>
+        <li>AI and Advanced Machine Learning (Deep Reinforcement Learning)</li>
+        <li>Probability and Statistics</li>
+        <li>Internet of Things</li>
+        <li>Computer Architecture and Operating Systems</li>
+        <li>Mobile Communication Systems</li>
+        <li>Internetworking and Web-Programming</li>
+      </ul>
+
+      <h3>Professional Service</h3>
+      <ul>
+        <li>Associate Editor, IEEE Transactions on Vehicular Technology.</li>
+        <li>Associate Editor, IEEE Transactions on Mobile Computing.</li>
+        <li>TPC Co-Chair, IEEE CCNC 2027, Satellite Networks and Integrated Space-Air-Ground Networks track.</li>
+        <li>Scientific Advisory Board Member, SMART 6G-SAT Center.</li>
+      </ul>
+    </section>
+
+    <div class="footer">
+      Last updated from CV materials. Replace <code>assets/avatar.svg</code> with your own photo if needed.
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<svg width="800" height="920" viewBox="0 0 800 920" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Placeholder portrait</title>
+  <desc id="desc">Stylized placeholder portrait with the initials MO.</desc>
+  <defs>
+    <linearGradient id="g1" x1="80" y1="50" x2="700" y2="840" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B84F3"/>
+      <stop offset="1" stop-color="#0F5EA8"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="200" y1="120" x2="620" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F4F8FD"/>
+      <stop offset="1" stop-color="#E4EEF8"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="800" height="920" rx="48" fill="url(#g2)"/>
+  <circle cx="400" cy="290" r="150" fill="url(#g1)" opacity="0.18"/>
+  <circle cx="400" cy="300" r="118" fill="url(#g1)"/>
+  <path d="M188 746C204 587 302 520 400 520C498 520 596 587 612 746" fill="url(#g1)" opacity="0.96"/>
+  <circle cx="400" cy="304" r="110" fill="#DCEAF9"/>
+  <path d="M308 344C325 394 358 428 400 428C442 428 475 394 492 344C486 295 453 252 400 252C347 252 314 295 308 344Z" fill="#0F5EA8" opacity="0.18"/>
+  <text x="400" y="845" text-anchor="middle" fill="#0F5EA8" font-family="Inter, Arial, sans-serif" font-size="112" font-weight="800">MÖ</text>
+</svg>
