@@ -3,226 +3,352 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Publications | Mustafa Özger</title>
+  <title>Publications — Mustafa Özger</title>
   <meta name="description" content="Full publication list of Mustafa Özger." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    (function(){
+      try{
+        var t = localStorage.getItem('theme');
+        if(!t){ t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
+        document.documentElement.setAttribute('data-theme', t);
+      }catch(e){}
+    })();
+  </script>
   <style>
+    :root{
+      --bg:#fbfaf6;
+      --surface:#fdfcf8;
+      --text:#1f1e1b;
+      --muted:#6b6864;
+      --rule:#e6e3dc;
+      --accent:#7a1e2a;
+      --accent-border:rgba(122,30,42,.25);
+      --mark:#fdf3a8;
+      --serif: "Source Serif 4", "Source Serif Pro", Charter, "Iowan Old Style", Georgia, serif;
+      --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --max: 820px;
+    }
+    [data-theme="dark"]{
+      --bg:#171613;
+      --surface:#1d1c18;
+      --text:#e6e2d8;
+      --muted:#97938a;
+      --rule:#2c2a25;
+      --accent:#d98a95;
+      --accent-border:rgba(217,138,149,.32);
+      --mark:#5a4a1a;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size:18px;
+      font-family:var(--serif);
+      font-size:17px;
       line-height:1.6;
-      color:#222;
-      background:#fff;
+      color:var(--text);
+      background:var(--bg);
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+      transition: background-color .2s ease, color .2s ease;
     }
-    .container{
-      max-width:980px;
-      margin:0 auto;
-      padding:28px 22px 48px;
+    a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-border)}
+    a:hover{border-bottom-color:var(--accent)}
+
+    .topbar{
+      border-bottom:1px solid var(--rule);
+      background:var(--bg);
+      position:sticky;top:0;z-index:50;
     }
-    a{color:#0b57a3;text-decoration:none}
-    a:hover{text-decoration:underline}
-    .topnav{
-      display:flex;
-      flex-wrap:wrap;
-      gap:18px;
-      margin-bottom:18px;
-      font-size:17px;
+    .topbar-inner{
+      max-width:var(--max);margin:0 auto;padding:14px 28px;
+      display:flex;align-items:center;justify-content:space-between;gap:18px;
+      font-family:var(--sans);font-size:14px;
     }
+    .brand{font-family:var(--serif);font-weight:600;font-size:16px;color:var(--text);border:none}
+    .nav{display:flex;flex-wrap:wrap;gap:18px;align-items:center}
+    .nav a{color:var(--muted);border:none;font-weight:500}
+    .nav a:hover{color:var(--accent)}
+
+    .theme-toggle{
+      display:inline-flex;align-items:center;justify-content:center;
+      width:30px;height:30px;border-radius:999px;
+      background:transparent;color:var(--muted);
+      border:1px solid var(--rule);cursor:pointer;
+      font:inherit;padding:0;
+      transition:color .2s ease,border-color .2s ease;
+    }
+    .theme-toggle:hover{color:var(--accent);border-color:var(--accent-border)}
+    .theme-toggle svg{width:15px;height:15px;display:block}
+    .theme-toggle .i-moon{display:none}
+    [data-theme="dark"] .theme-toggle .i-sun{display:none}
+    [data-theme="dark"] .theme-toggle .i-moon{display:block}
+
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+
+    header.page{padding:48px 0 20px}
     h1{
-      font-size:38px;
-      margin:0 0 10px 0;
-      font-weight:700;
+      font-family:var(--serif);font-weight:600;
+      font-size:2.1rem;line-height:1.1;letter-spacing:-.01em;
+      margin:0 0 8px;
     }
-    h2{
-      font-size:28px;
-      margin:32px 0 10px 0;
-      border-bottom:1px solid #ddd;
-      padding-bottom:6px;
+    header.page p{margin:0;color:var(--muted);font-size:1rem}
+
+    .tools{
+      display:flex;flex-wrap:wrap;gap:14px;align-items:center;
+      margin:22px 0 10px;
+      font-family:var(--sans);font-size:14px;
     }
-    p{margin:10px 0}
-    .small{font-size:16px;color:#555}
     .search{
-      width:100%;
-      max-width:420px;
-      padding:10px 12px;
-      font-size:17px;
-      border:1px solid #cfcfcf;
+      flex:1 1 260px;max-width:420px;
+      padding:9px 12px;font-size:14px;font-family:var(--sans);
+      background:var(--surface);color:var(--text);
+      border:1px solid var(--rule);border-radius:3px;
+      outline:none;
     }
-    ol{margin:8px 0 0 26px;padding:0}
-    li{margin:8px 0}
-    .section{margin-top:18px}
-    .footer{
-      margin-top:40px;
-      padding-top:16px;
-      border-top:1px solid #ddd;
-      color:#555;
-      font-size:16px;
+    .search::placeholder{color:var(--muted)}
+    .search:focus{border-color:var(--accent)}
+    .count{color:var(--muted)}
+
+    h2{
+      font-family:var(--serif);font-weight:600;
+      font-size:1.25rem;letter-spacing:-.005em;
+      margin:40px 0 12px;
+      padding-bottom:6px;
+      border-bottom:1px solid var(--rule);
     }
-    mark{background:#fff2a8}
-    @media (max-width:700px){
-      body{font-size:17px}
-      h1{font-size:32px}
+
+    ol.pub-list{
+      list-style:none;margin:0;padding:0;counter-reset:pubc;
+    }
+    ol.pub-list li{
+      counter-increment:pubc;
+      position:relative;
+      padding:12px 0 12px 44px;
+      border-top:1px solid var(--rule);
+      font-size:.98rem;line-height:1.55;
+    }
+    ol.pub-list li:first-child{border-top:none}
+    ol.pub-list li::before{
+      content:counter(pubc) ".";
+      position:absolute;left:0;top:13px;
+      width:34px;text-align:right;
+      font-family:var(--sans);font-size:13px;font-weight:600;
+      color:var(--muted);
+    }
+    ol.pub-list li .title{font-weight:600}
+    ol.pub-list li em{font-style:italic}
+    ol.pub-list li .venue{color:var(--text)}
+    .award{
+      display:inline-block;margin-left:4px;
+      font-family:var(--sans);font-size:11.5px;font-weight:600;
+      color:var(--accent);
+      border:1px solid var(--accent-border);
+      padding:1px 6px;border-radius:2px;
+      vertical-align:1px;
+    }
+    mark{background:var(--mark);color:inherit;padding:0 1px}
+
+    footer{
+      border-top:1px solid var(--rule);
+      margin-top:56px;
+      padding:24px 0 40px;
+      font-family:var(--sans);font-size:13px;color:var(--muted);
+      display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+    }
+    footer a{color:var(--muted);border:none}
+    footer a:hover{color:var(--accent)}
+
+    @media (max-width: 640px){
+      .topbar-inner,.wrap{padding-left:20px;padding-right:20px}
+      .nav{gap:12px;font-size:13px}
+      h1{font-size:1.7rem}
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <nav class="topnav">
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html">Mustafa Özger</a>
+    <nav class="nav">
       <a href="index.html">Home</a>
-      <a href="#journal-articles">Journal Articles</a>
-      <a href="#book-chapters">Book Chapters</a>
-      <a href="#conference-papers">Conference Papers</a>
+      <a href="#journal-articles">Journals</a>
+      <a href="#book-chapters">Books</a>
+      <a href="#conference-papers">Conferences</a>
       <a href="assets/CV_Mustafa_Ozger.pdf" target="_blank" rel="noopener">CV</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
     </nav>
-
-    <h1>Publications</h1>
-    <p>Complete publication list of Mustafa Özger.</p>
-    <p class="small">You can search by year, venue, keyword, or co-author.</p>
-    <input id="pubSearch" class="search" type="search" placeholder="Search publications" />
-
-    <div id="journal-articles" class="section">
-      <h2>Peer-Reviewed Journal Articles</h2>
-      <ol class="pub-list">
-        <li>1. Q. Wang, S. Zhang, M. Ozger and C. Cavdar, “Independent PPO-based Robust and Scalable Three-dimensional Configuration for Green Massive MIMO Networks,” IEEE Transactions on Green Communications and Networking, Early Access, 2026.</li>
-<li>2. I. A. Meer, K.-L. Besser, M. Ozger, D. Schupke, H. V. Poor, and C. Cavdar, “Hierarchical Multi-Agent DRL-Based Dynamic Cluster Reconfiguration for UAV Mobility Management,” IEEE Transactions on Cognitive Communications and Networking, vol. 12, pp. 4957–4971, 2025.</li>
-<li>3. S. S. S. G. Seeram, L. Feltrin, M. Ozger, and C. Cavdar, “Digital Twin-Based Optimization of Service Availability in LEO Mega-Constellations Considering Handover Delays in Open RAN,” International Journal of Satellite Communications and Networking, vol. 0, pp. 1–19, 2025.</li>
-<li>4. O. T. Demir, M. Ozger, F. Kara, W.-H. Lee, and E. Björnson, “Near-Field SWIPT with gMIMO in the Upper Mid-Band: Opportunities, Challenges, and the Way Forward,” IEEE Wireless Communications, Early Access, pp. 1–8, 2025.</li>
-<li>5. D. H. Kim, J.-H. Kim, M. Ozger, E. Björnson, and W.-H. Lee, “Level Test-Inspired SNR Estimation-Based Dataset Clustering Algorithms for Learnability Maximization in Neural Network Design,” IEEE Internet of Things Journal, vol. 12, no. 23, pp. 50836–50851, 2025.</li>
-<li>6. S. S. S. G. Seeram, L. Feltrin, M. Ozger, S. Zhang, and C. Cavdar, “Handover Challenges in Disaggregated Open RAN for LEO Satellites: Tradeoff Between Handover Delay and Onboard Processing,” Frontiers in Space Technologies, vol. 6, p. 1580005, 2025.</li>
-<li>7. Y. Deng, S. Zhang, I. A. Meer, M. Ozger, and C. Cavdar, “Joint Trajectory and Handover Management for UAVs Co-Existing with Terrestrial Users: A Multi-Agent DRL Approach,” IEEE Transactions on Cognitive Communications and Networking, vol. 12, pp. 1195–1210, 2025.</li>
-<li>8. L. Zhang, M. Ozger, and W.-H. Lee, “A Hankelization-Based Neural Network-Assisted Signal Classification in Integrated Sensing and Communication Systems,” IEEE Access, vol. 13, pp. 94648–94657, 2025.</li>
-<li>9. S. Zhang, M. Ozger, S. S. S. G. Seeram, I. Godor, L. Feltrin, A. Nordlow, J. Pfeifle, L. Toka, G. Biczok, D. A. Schupke, and C. Cavdar, “6G for Connected Sky: Holistic Adaptive Combined Airspace and Non-Terrestrial Network Architecture,” IEEE Wireless Communications, vol. 32, no. 5, pp. 204–211, 2025.</li>
-<li>10. C. Koca, M. Ozger, O. Cetinkaya, and O. B. Akan, “Information-Theoretic Lifetime Maximization for IoBNT-Enabled Sensing,” IEEE Transactions on Molecular, Biological, and Multi-Scale Communications, vol. 11, no. 3, pp. 462–466, 2025.</li>
-<li>11. W.-H. Lee, M. Ozger, U. Challita, and T. Song, “Denoising-Autoencoder-Aided Euclidean Distance Matrix Reconstruction for Connectivity-Based Localization: A Low-Rank Perspective,” Applied Sciences, vol. 15, no. 5, p. 2656, 2025.</li>
-<li>12. B. Mölleryd, M. Ozger, M. Westring, A. Nordlöw, D. Schupke, U. Engström, C. Cavdar, M. Lindborg, and N. Sciammetta, “Regulatory and Spectrum Policy Challenges for Combined Airspace and Non-Terrestrial Networks,” Telecommunications Policy, vol. 49, no. 11, 2025.</li>
-<li>13. O. A. Topal, Z. Li, M. Ozger, D. Schupke, E. Björnson, and C. Cavdar, “Millimeter-Wave Channel Modeling and Coverage Analysis for Indoor Dense Spaces,” IEEE Transactions on Vehicular Technology, vol. 74, no. 1, pp. 5–20, Jan. 2025.</li>
-<li>14. J.-H. Kim, M. Ozger, and W.-H. Lee, “CR2Net: A Neural Network Based Classifier for Rician and Rayleigh Channels via Hankelization,” IEEE Wireless Communications Letters, vol. 13, no. 5, pp. 1235–1239, 2024.</li>
-<li>15. J.-Y. Jeong, M. Ozger, and W.-H. Lee, “Compressed Sensing vs. Auto-Encoder: On the Perspective of Signal Compression and Restoration,” IEEE Access, vol. 12, pp. 41967–41979, 2024.</li>
-<li>16. J.-H. Kim, D.-H. Kim, M. Ozger, and W.-H. Lee, “An NN-Aided Near-and-Far-Field Classifier via Channel Hankelization in XL-MIMO Systems,” IEEE Access, vol. 12, pp. 41934–41941, 2024.</li>
-<li>17. I. A. Meer, M. Ozger, D. Schupke, and C. Cavdar, “Mobility Management for Cellular-Connected UAVs: Model-Based Versus Learning-Based Approaches for Service Availability,” IEEE Transactions on Network and Service Management, vol. 21, no. 2, pp. 2125–2139, 2024.</li>
-<li>18. K.-J. Cha, J.-B. Lee, M. Ozger, and W.-H. Lee, “When Wireless Localization Meets Artificial Intelligence: Basics, Challenges, Synergies, and Prospects,” Applied Sciences, vol. 13, no. 23, p. 12734, 2023.</li>
-<li>19. I. A. Meer, M. Ozger, and C. Cavdar, “Cellular Localizability of Unmanned Aerial Vehicles,” Vehicular Communications, vol. 44, 2023.</li>
-<li>20. F. Salehi, M. Ozger, and C. Cavdar, “Reliability and Delay Analysis of 3-Dimensional Networks with Multi-Connectivity: Satellite, HAPs, and Cellular Communications,” IEEE Transactions on Network and Service Management, vol. 21, no. 1, pp. 437–450, 2023.</li>
-<li>21. V. Megas, S. Hoppe, M. Ozger, D. Schupke, and C. Cavdar, “A Combined Topology Formation and Rate Allocation Algorithm for Aeronautical Ad Hoc Networks,” IEEE Transactions on Mobile Computing, vol. 23, no. 1, pp. 12–28, 2022.</li>
-<li>22. M. Ozger, E. B. Pehlivanoglu, and O. B. Akan, “Energy-Efficient Transmission Range and Duration for Cognitive Radio Sensor Networks,” IEEE Transactions on Cognitive Communications and Networking, vol. 8, no. 2, pp. 907–918, Jun. 2022.</li>
-<li>23. W. Li, H. Faragardi, M. Ozger, C. Cavdar, and B. Skubic, “Cost-Aware Service Selection in a Mobile Edge Marketplace,” Computer Networks, vol. 205, pp. 1–10, Aug. 2021.</li>
-<li>24. A. Baltaci, E. Dinc, M. Ozger, A. Alabbasi, C. Cavdar, and D. Schupke, “A Survey of Wireless Networks for Future Aerial Communications (FACOM),” IEEE Communications Surveys & Tutorials, vol. 23, no. 4, pp. 2833–2884, 2021.</li>
-<li>25. W.-H. Lee, M. Ozger, U. Challita, and K. W. Sung, “Noise Learning-Based Denoising Autoencoder,” IEEE Communications Letters, vol. 25, no. 9, pp. 2983–2987, Sept. 2021.</li>
-<li>26. M. Tavana, M. Ozger, A. Baltaci, B. Schleicher, D. Schupke, and C. Cavdar, “Wireless Power Transfer for Aircraft IoT Applications: System Design and Measurements,” IEEE Internet of Things Journal, vol. 8, no. 15, pp. 11834–11846, Aug. 2021.</li>
-<li>27. W.-H. Lee, M. Ozger, and U. Challita, “Geometric Sequential Learning Dynamics,” IEEE Communications Letters, vol. 25, no. 2, pp. 542–545, Feb. 2021.</li>
-<li>28. A. Azari, M. Ozger, and C. Cavdar, “Risk-Aware Resource Allocation for URLLC: Challenges and Strategies with Machine Learning,” IEEE Communications Magazine, vol. 57, no. 3, pp. 42–48, Mar. 2019.</li>
-<li>29. M. Vondra, M. Ozger, D. Schupke, and C. Cavdar, “Integration of Satellite and Aerial Communications for Heterogeneous Flying Vehicles,” IEEE Network, vol. 32, no. 5, pp. 62–69, Sep. 2018.</li>
-<li>30. K. Cepni, M. Ozger, and O. B. Akan, “Event Estimation Accuracy of Social Sensing with Facebook for Social Internet of Vehicles,” IEEE Internet of Things Journal, vol. 5, no. 4, pp. 2449–2456, Aug. 2018.</li>
-<li>31. M. Ozger, O. Cetinkaya, and O. B. Akan, “Energy Harvesting Cognitive Radio Networking for IoT-Enabled Smart Grid,” Mobile Networks and Applications, vol. 23, no. 4, pp. 956–966, Aug. 2018.</li>
-<li>32. M. Ozger, F. Alagoz, and O. B. Akan, “Clustering in Multi-Channel Cognitive Radio Ad Hoc and Sensor Networks,” IEEE Communications Magazine, vol. 56, no. 4, pp. 156–162, Apr. 2018.</li>
-<li>33. O. B. Akan, O. Cetinkaya, C. Koca, and M. Ozger, “Internet of Hybrid Energy Harvesting Things,” IEEE Internet of Things Journal, vol. 5, no. 2, pp. 736–746, Apr. 2018.</li>
-<li>34. T. Long, M. Ozger, and O. B. Akan, “Energy Neutral Internet of Drones,” IEEE Communications Magazine, vol. 56, no. 1, pp. 22–28, Jan. 2018.</li>
-<li>35. M. Ozger, E. Fadel, and O. B. Akan, “Event-to-Sink Spectrum-Aware Clustering in Mobile Cognitive Radio Sensor Networks,” IEEE Transactions on Mobile Computing, vol. 15, no. 9, pp. 2221–2233, Sep. 2016.</li>
-<li>36. M. Ozger and O. B. Akan, “On the Utilization of Spectrum Opportunity in Cognitive Radio Networks,” IEEE Communications Letters, vol. 20, no. 1, pp. 157–160, Jan. 2016.</li>
-<li>37. D. Kilinc, M. Ozger, and O. B. Akan, “On the Maximum Coverage Area of Wireless Networked Control Systems with Maximum Cost-Efficiency under Convergence Constraint,” IEEE Transactions on Automatic Control, vol. 60, no. 7, pp. 1910–1914, Nov. 2014.</li>
-      </ol>
-    </div>
-
-    <div id="book-chapters" class="section">
-      <h2>Peer-Reviewed Book Chapters</h2>
-      <ol class="pub-list">
-        <li>1. O. Cetinkaya, M. Ozger, and O. B. Akan, “Internet of Energy Harvesting Cognitive Radios,” pp. 125–150, in Towards Cognitive IoT Networks, Springer Nature, 2019.</li>
-<li>2. M. Ozger, O. Cetinkaya, and O. B. Akan, “Energy Harvesting Cognitive Radios in Smart Cities,” pp. 3–20, in Transportation and Power Grid in Smart Cities: Communication Networks and Services, John Wiley, 2018.</li>
-<li>3. K. Cepni, M. Ozger, and O. B. Akan, “Vehicular Social Sensor Networks,” in Vehicular Social Networks, CRC Press, 2017.</li>
-<li>4. M. Ozger, E. B. Pehlivanoglu, and O. B. Akan, “Multimedia Communication in Cognitive Radio Sensor Networks,” in Wireless Multimedia Sensor Networks (WMSNs): Architectures, Protocols and Applications, CRC Press, 2016.</li>
-<li>5. E. B. Pehlivanoglu, M. Ozger, and O. B. Akan, “Sensing Coverage and Connectivity in Cognitive Radio Sensor Networks,” in Cognitive Radio Sensor Networks: Applications, Architectures and Challenges, IGI Global, 2014.</li>
-      </ol>
-    </div>
-
-    <div id="conference-papers" class="section">
-      <h2>Peer-Reviewed Conference Papers</h2>
-      <ol class="pub-list">
-        <li>1. I. A. Meer, A. Baltaci, M. Ozger, D. Schupke, and C. Cavdar, “Multi-Connectivity for UAVs: A Measurement Study of Integrating Cellular, Aerial Mesh, and LEO Satellite Links,” IEEE EuCNC, 2026, pp. 1–6.</li>
-<li>2. L. Pelz, A. J. Awan, and M. Ozger, “A Neuromorphic Approach to LDPC Decoding with Spiking Belief Propagation,” IEEE EuCNC, 2026, pp. 1–6.</li>
-<li>3. Q. Wang, K. Li, O. A. Topal, O. T. Demir, M. Ozger, and C. Cavdar, “Energy Saving for Cell-Free Massive MIMO Networks: A Multi-Agent Deep Reinforcement Learning Approach,” IEEE ICC, 2026, pp. 1–6.</li>
-<li>4. J. Liu, I. A. Meer, C. Cavdar, and M. Ozger, “Incremental Learning-Based Open-Set Classification of Unknown UAVs via RF Signal Semantics,” IEEE ICC, 2026, pp. 1–6.</li>
-<li>5. S. S. S. G. Seeram, M. Ozger, and C. Cavdar, “In-Orbit Processing and Doppler-Adaptive Waveforms in O-RAN-Enabled LEO Networks: How Much Can We Gain?,” IEEE Asilomar, 2025, pp. 1–5.</li>
-<li>6. I. A. Meer, B. Hörmann, M. Ozger, F. Geyer, A. Viseras, D. Schupke, and C. Cavdar, “Explainable AI for UAV Mobility Management: A Deep Q-Network Approach for Handover Minimization,” IEEE PIMRC, 2025.</li>
-<li>7. S. T. Islam, M. Ganjalizadeh, H. S. Ghadikolaei, and M. Ozger, “Enhancing URLLC Availability in Multi-Connectivity Scenarios Using Deep Reinforcement Learning,” IEEE EuCNC, 2025.</li>
-<li>8. A. Manzoor, M. Ozger, and C. Cavdar, “Risk-Aware Backup Path Allocation in O-RAN Based Integrated Terrestrial and Non-Terrestrial Networks,” IEEE DRCN, 2025.</li>
-<li>9. F. Giarre, I. A. Meer, M. Masoudi, M. Ozger, and C. Cavdar, “Hierarchical Multi-Agent DRL for Soft Handovers Between Edge Clouds in Open RAN,” IEEE ICMLCN, 2025.</li>
-<li>10. F. Zhou, P. Wang, M. Ozger, and C. Cavdar, “Blind Detection of Drones Using OFDM-Based Zadoff-Chu Sequences with Field Tests,” IEEE ICC, 2025.</li>
-<li>11. S. S. S. G. Seeram, L. Feltrin, M. Ozger, S. Zhang, and C. Cavdar, “Handover Delay Minimization in Non-Terrestrial Networks: Impact of Open RAN Functional Splits,” IEEE ASMS/SPSC, Sitges, Spain, 2025, pp. 1–8. (Best Paper Award)</li>
-<li>12. A. Manzoor, M. Ozger, and C. Cavdar, “Optimizing UAV Deployment for Enhanced Cellular Network Capacity: A Joint Optimization Approach,” IEEE ICCSPA, Istanbul, Türkiye, 2024, pp. 1–6.</li>
-<li>13. A. Manzoor, M. Ozger, D. Schupke, and C. Cavdar, “Combined Airspace and Non-Terrestrial 6G Networks for Advanced Air Mobility,” IEEE DRCN, Montreal, QC, Canada, 2024, pp. 1–7.</li>
-<li>14. S. S. S. G. Seeram, L. Feltrin, M. Ozger, S. Zhang, and C. Cavdar, “Feasibility Study of Function Splits in RAN Architectures with LEO Satellites,” IEEE EuCNC & 6G Summit, Antwerp, Belgium, 2024, pp. 1–6.</li>
-<li>15. I. A. Meer, K.-L. Besser, M. Ozger, H. V. Poor, and C. Cavdar, “Learning-Based Dynamic Cluster Reconfiguration for UAV Mobility Management With 3D Beamforming,” IEEE ICMLCN, Stockholm, Sweden, 2024, pp. 1–6.</li>
-<li>16. J. Chen, M. Ozger, and C. Cavdar, “Nash Soft Actor-Critic LEO Satellite Handover Management Algorithm for Flying Vehicles,” IEEE ICMLCN, Stockholm, Sweden, 2024, pp. 1–6.</li>
-<li>17. Y. Deng, I. A. Meer, S. Zhang, M. Ozger, and C. Cavdar, “D3QN-Based Trajectory and Handover Management for UAVs Co-Existing with Terrestrial Users,” IEEE WiOpt, Singapore, 2023, pp. 1–8.</li>
-<li>18. S. S. S. G. Seeram, S. Zhang, M. Ozger, A. Grabs, J. Holis, and C. Cavdar, “Aerial Base Stations: Practical Considerations for Power Consumption and Service Time,” IEEE GLOBECOM, Kuala Lumpur, Malaysia, 2023, pp. 1–6.</li>
-<li>19. K. Hao, J. M. Cortes, and M. Ozger, “Counterfactual and Causal Analysis for AI-Based Modulation and Coding Scheme Selection,” IEEE GLOBECOM Workshops, Kuala Lumpur, Malaysia, 2023, pp. 1–6.</li>
-<li>20. I. A. Meer, K.-L. Besser, M. Ozger, H. V. Poor, and C. Cavdar, “Reinforcement Learning-Based Power Allocation for UAVs with Varying Reliability Requirements,” IEEE Asilomar, Pacific Grove, CA, USA, 2023, pp. 724–728.</li>
-<li>21. S. Cheng, O. A. Topal, M. Ozger, C. Cavdar, L. Liu, and O. Edfors, “mmWave Massive MIMO Processing in Demanding Environments – An Aircraft Cabin Deployment Study,” IEEE Asilomar, Pacific Grove, CA, USA, 2023, pp. 1631–1635.</li>
-<li>22. G. N. Sharma, M. Ganjalizadeh, D. Patel, and M. Ozger, “Dynamic Spatial Diversity via Reinforcement Learning for Ultra-Reliable Low-Latency Communications,” European Wireless, Rome, Italy, 2023, pp. 284–289.</li>
-<li>23. O. Cetinkaya, M. Ozger, and D. De Roure, “Coverage Performance of UAV-Powered Sensors for Energy-Neutral Networks with Recharging Stations,” IEEE ICC, Rome, Italy, 2023, pp. 2902–2908.</li>
-<li>24. S. Cheng, O. A. Topal, M. Ozger, C. Cavdar, L. Liu, and O. Edfors, “A Hardware-In-The-Loop Simulator for mmWave Massive MIMO Using PYNQ Framework,” IEEE MWSCAS, Tempe, AZ, USA, 2023, pp. 698–702.</li>
-<li>25. M. Ozger et al., “6G for Connected Sky: A Vision for Integrating Terrestrial and Non-Terrestrial Networks,” EuCNC/6G Summit, Gothenburg, Sweden, 2023, pp. 711–716.</li>
-<li>26. F. Salehi, M. Ozger, N. Neda, and C. Cavdar, “Ultra-Reliable Low-Latency Communication for Aerial Vehicles via Multi-Connectivity,” EuCNC/6G Summit, Grenoble, France, 2022, pp. 166–171.</li>
-<li>27. A. Bolakhrif, M. Ozger, D. Sandberg, and C. Cavdar, “AI-Assisted Network Traffic Prediction Without Warm-Up Periods,” IEEE VTC-Spring, Helsinki, Finland, 2022, pp. 1–6.</li>
-<li>28. I. A. Meer, W.-H. Lee, M. Ozger, C. Cavdar, and K. W. Sung, “Low-Latency MAC Design for Pairwise Random Networks,” IEEE VTC-Spring, Helsinki, Finland, 2022, pp. 1–6.</li>
-<li>29. O. A. Topal, M. Ozger, D. Schupke, E. Björnson, and C. Cavdar, “mmWave Communications for Indoor Dense Spaces: Ray-Tracing Based Channel Characterization and Performance Comparison,” IEEE ICC, Seoul, Korea, 2022, pp. 516–521.</li>
-<li>30. D. Brunello, I. Johansson S., M. Ozger, and C. Cavdar, “Low-Latency Low-Loss Scalable Throughput in 5G Networks,” IEEE VTC-Spring, Helsinki, Finland, 2021, pp. 1–7.</li>
-<li>31. M. Tavana, M. Ozger, A. Baltaci, B. Schleicher, J. Tepper, S. Duhovnikov, D. Schupke, and C. Cavdar, “Wireless Power Transfer System Design for Low-Rate In-Cabin Applications,” IEEE ICCE, 2021, pp. 235–240.</li>
-<li>32. J. Tepper, A. Baltaci, B. Schleicher, A. Drexler, S. Duhovnikov, M. Tavana, M. Ozger, C. Cavdar, and D. Schupke, “Evaluation of RF Wireless Power Transfer for Low-Power Aircraft Sensors,” AIAA/IEEE DASC, San Antonio, TX, USA, 2020, pp. 1–6.</li>
-<li>33. A. Azari, F. Ghavimi, M. Ozger, R. Jäntti, and C. Cavdar, “Machine Learning Assisted Handover and Resource Management for Cellular Connected Drones,” IEEE VTC-Spring, Antwerp, Belgium, 2020, pp. 1–7.</li>
-<li>34. D. Tomic, S. Hofmann, M. Ozger, D. Schupke, and C. Cavdar, “Quality of Service Aware Traffic Management for Aircraft Communications,” IEEE VTC-Spring, Antwerp, Belgium, 2020, pp. 1–6.</li>
-<li>35. A. Meer, M. Ozger, and C. Cavdar, “On the Localization of Unmanned Aerial Vehicles with Cellular Networks,” IEEE WCNC, Seoul, Korea, 2020, pp. 1–6.</li>
-<li>36. P. Wang, M. Ozger, C. Cavdar, and M. Petrova, “Beyond Visual Line of Sight Piloting of UAVs Using Millimeter-Wave Cellular Networks,” IEEE PIMRC, Istanbul, Turkey, 2019, pp. 1–6.</li>
-<li>37. I. A. Meer, M. Ozger, M. Lundmark, K. W. Sung, and C. Cavdar, “Ground Based Sense and Avoid System for Air Traffic Management,” IEEE PIMRC, Istanbul, Turkey, 2019, pp. 1–6.</li>
-<li>38. S. Hofmann, V. Megas, M. Ozger, D. Schupke, F. H. P. Fitzek, and C. Cavdar, “Combined Optimal Topology Formation and Rate Allocation for Aircraft-to-Aircraft Communications,” IEEE ICC, Shanghai, China, 2019, pp. 1–6.</li>
-<li>39. M. Ozger, M. Vondra, and C. Cavdar, “Towards Beyond Visual Line of Sight Piloting of UAVs with Ultra-Reliable Low-Latency Communication,” IEEE GLOBECOM, Abu Dhabi, United Arab Emirates, 2018, pp. 1–6.</li>
-<li>40. E. B. Pehlivanoglu, M. Ozger, O. Cetinkaya, and O. B. Akan, “Harvesting-Throughput Trade-Off for Wireless-Powered Smart Grid IoT Applications: An Experimental Study,” IEEE ICC, Kansas City, MO, USA, 2018, pp. 1–6.</li>
-<li>41. E. Dinc, M. Ozger, A. F. Ates, I. Delibalta, and O. B. Akan, “Crowdsourcing-Based Mobile Network Tomography for xG Wireless Systems,” IEEE ISCC, Messina, Italy, 2016, pp. 346–351. (Best Paper Award)</li>
-<li>42. M. Ozger and O. B. Akan, “Maximization of Energy-Efficiency under Convergence Constraint in Wireless Networked Control Systems,” IEEE ICC, London, UK, 2015, pp. 5973–5978.</li>
-<li>43. D. Kilinc, M. Ozger, and O. B. Akan, “On the Maximum Coverage Area of Wireless Networked Control Systems under Stability and Cost-Efficiency Constraints,” IEEE GLOBECOM, Atlanta, GA, USA, 2013, pp. 274–279.</li>
-<li>44. M. Ozger and O. B. Akan, “Event-Driven Spectrum-Aware Clustering in Cognitive Radio Sensor Networks,” IEEE INFOCOM, Turin, Italy, 2013, pp. 1483–1491.</li>
-      </ol>
-    </div>
-
-    <div class="footer">
-      <a href="index.html">Back to homepage</a>
-    </div>
   </div>
+</header>
 
-  <script>
-    const searchInput = document.getElementById('pubSearch');
-    const lists = [...document.querySelectorAll('.pub-list')];
-    const sections = [...document.querySelectorAll('.section')];
-    const items = [...document.querySelectorAll('.pub-list li')];
+<main class="wrap">
 
-    function escapeRegExp(s) {
-      return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    }
+  <header class="page">
+    <h1>Publications</h1>
+    <p>Complete list of peer-reviewed work. Search by year, venue, keyword, or co-author.</p>
+    <div class="tools">
+      <input id="pubSearch" class="search" type="search" placeholder="Search publications…" />
+      <span class="count" id="pubCount"></span>
+    </div>
+  </header>
 
-    function highlight(text, query) {
-      if (!query) return text;
-      const regex = new RegExp('(' + escapeRegExp(query) + ')', 'ig');
-      return text.replace(regex, '<mark>$1</mark>');
-    }
+  <section id="journal-articles">
+    <h2>Peer-reviewed journal articles</h2>
+    <ol class="pub-list">
+      <li><span class="title">Q. Wang, S. Zhang, M. Özger, and C. Cavdar,</span> <span class="venue">“Independent PPO-based robust and scalable three-dimensional configuration for green massive MIMO networks,” <em>IEEE Transactions on Green Communications and Networking</em>, Early Access, 2026.</span></li>
+      <li><span class="title">I. A. Meer, K.-L. Besser, M. Özger, D. Schupke, H. V. Poor, and C. Cavdar,</span> <span class="venue">“Hierarchical multi-agent DRL-based dynamic cluster reconfiguration for UAV mobility management,” <em>IEEE Transactions on Cognitive Communications and Networking</em>, vol. 12, pp. 4957–4971, 2025.</span></li>
+      <li><span class="title">S. S. S. G. Seeram, L. Feltrin, M. Özger, and C. Cavdar,</span> <span class="venue">“Digital twin-based optimization of service availability in LEO mega-constellations considering handover delays in Open RAN,” <em>International Journal of Satellite Communications and Networking</em>, vol. 0, pp. 1–19, 2025.</span></li>
+      <li><span class="title">O. T. Demir, M. Özger, F. Kara, W.-H. Lee, and E. Björnson,</span> <span class="venue">“Near-field SWIPT with gMIMO in the upper mid-band: opportunities, challenges, and the way forward,” <em>IEEE Wireless Communications</em>, Early Access, pp. 1–8, 2025.</span></li>
+      <li><span class="title">D. H. Kim, J.-H. Kim, M. Özger, E. Björnson, and W.-H. Lee,</span> <span class="venue">“Level test-inspired SNR estimation-based dataset clustering algorithms for learnability maximization in neural network design,” <em>IEEE Internet of Things Journal</em>, vol. 12, no. 23, pp. 50836–50851, 2025.</span></li>
+      <li><span class="title">S. S. S. G. Seeram, L. Feltrin, M. Özger, S. Zhang, and C. Cavdar,</span> <span class="venue">“Handover challenges in disaggregated Open RAN for LEO satellites: tradeoff between handover delay and onboard processing,” <em>Frontiers in Space Technologies</em>, vol. 6, p. 1580005, 2025.</span></li>
+      <li><span class="title">Y. Deng, S. Zhang, I. A. Meer, M. Özger, and C. Cavdar,</span> <span class="venue">“Joint trajectory and handover management for UAVs co-existing with terrestrial users: a multi-agent DRL approach,” <em>IEEE Transactions on Cognitive Communications and Networking</em>, vol. 12, pp. 1195–1210, 2025.</span></li>
+      <li><span class="title">L. Zhang, M. Özger, and W.-H. Lee,</span> <span class="venue">“A Hankelization-based neural network-assisted signal classification in integrated sensing and communication systems,” <em>IEEE Access</em>, vol. 13, pp. 94648–94657, 2025.</span></li>
+      <li><span class="title">S. Zhang, M. Özger, S. S. S. G. Seeram, I. Godor, L. Feltrin, A. Nordlow, J. Pfeifle, L. Toka, G. Biczok, D. A. Schupke, and C. Cavdar,</span> <span class="venue">“6G for connected sky: holistic adaptive combined airspace and non-terrestrial network architecture,” <em>IEEE Wireless Communications</em>, vol. 32, no. 5, pp. 204–211, 2025.</span></li>
+      <li><span class="title">C. Koca, M. Özger, O. Cetinkaya, and O. B. Akan,</span> <span class="venue">“Information-theoretic lifetime maximization for IoBNT-enabled sensing,” <em>IEEE Transactions on Molecular, Biological, and Multi-Scale Communications</em>, vol. 11, no. 3, pp. 462–466, 2025.</span></li>
+      <li><span class="title">W.-H. Lee, M. Özger, U. Challita, and T. Song,</span> <span class="venue">“Denoising-autoencoder-aided Euclidean distance matrix reconstruction for connectivity-based localization: a low-rank perspective,” <em>Applied Sciences</em>, vol. 15, no. 5, p. 2656, 2025.</span></li>
+      <li><span class="title">B. Mölleryd, M. Özger, M. Westring, A. Nordlöw, D. Schupke, U. Engström, C. Cavdar, M. Lindborg, and N. Sciammetta,</span> <span class="venue">“Regulatory and spectrum policy challenges for combined airspace and non-terrestrial networks,” <em>Telecommunications Policy</em>, vol. 49, no. 11, 2025.</span></li>
+      <li><span class="title">O. A. Topal, Z. Li, M. Özger, D. Schupke, E. Björnson, and C. Cavdar,</span> <span class="venue">“Millimeter-wave channel modeling and coverage analysis for indoor dense spaces,” <em>IEEE Transactions on Vehicular Technology</em>, vol. 74, no. 1, pp. 5–20, Jan. 2025.</span></li>
+      <li><span class="title">J.-H. Kim, M. Özger, and W.-H. Lee,</span> <span class="venue">“CR2Net: a neural network based classifier for Rician and Rayleigh channels via Hankelization,” <em>IEEE Wireless Communications Letters</em>, vol. 13, no. 5, pp. 1235–1239, 2024.</span></li>
+      <li><span class="title">J.-Y. Jeong, M. Özger, and W.-H. Lee,</span> <span class="venue">“Compressed sensing vs. auto-encoder: on the perspective of signal compression and restoration,” <em>IEEE Access</em>, vol. 12, pp. 41967–41979, 2024.</span></li>
+      <li><span class="title">J.-H. Kim, D.-H. Kim, M. Özger, and W.-H. Lee,</span> <span class="venue">“An NN-aided near-and-far-field classifier via channel Hankelization in XL-MIMO systems,” <em>IEEE Access</em>, vol. 12, pp. 41934–41941, 2024.</span></li>
+      <li><span class="title">I. A. Meer, M. Özger, D. Schupke, and C. Cavdar,</span> <span class="venue">“Mobility management for cellular-connected UAVs: model-based versus learning-based approaches for service availability,” <em>IEEE Transactions on Network and Service Management</em>, vol. 21, no. 2, pp. 2125–2139, 2024.</span></li>
+      <li><span class="title">K.-J. Cha, J.-B. Lee, M. Özger, and W.-H. Lee,</span> <span class="venue">“When wireless localization meets artificial intelligence: basics, challenges, synergies, and prospects,” <em>Applied Sciences</em>, vol. 13, no. 23, p. 12734, 2023.</span></li>
+      <li><span class="title">I. A. Meer, M. Özger, and C. Cavdar,</span> <span class="venue">“Cellular localizability of unmanned aerial vehicles,” <em>Vehicular Communications</em>, vol. 44, 2023.</span></li>
+      <li><span class="title">F. Salehi, M. Özger, and C. Cavdar,</span> <span class="venue">“Reliability and delay analysis of 3-dimensional networks with multi-connectivity: satellite, HAPs, and cellular communications,” <em>IEEE Transactions on Network and Service Management</em>, vol. 21, no. 1, pp. 437–450, 2023.</span></li>
+      <li><span class="title">V. Megas, S. Hoppe, M. Özger, D. Schupke, and C. Cavdar,</span> <span class="venue">“A combined topology formation and rate allocation algorithm for aeronautical ad hoc networks,” <em>IEEE Transactions on Mobile Computing</em>, vol. 23, no. 1, pp. 12–28, 2022.</span></li>
+      <li><span class="title">M. Özger, E. B. Pehlivanoglu, and O. B. Akan,</span> <span class="venue">“Energy-efficient transmission range and duration for cognitive radio sensor networks,” <em>IEEE Transactions on Cognitive Communications and Networking</em>, vol. 8, no. 2, pp. 907–918, Jun. 2022.</span></li>
+      <li><span class="title">W. Li, H. Faragardi, M. Özger, C. Cavdar, and B. Skubic,</span> <span class="venue">“Cost-aware service selection in a mobile edge marketplace,” <em>Computer Networks</em>, vol. 205, pp. 1–10, Aug. 2021.</span></li>
+      <li><span class="title">A. Baltaci, E. Dinc, M. Özger, A. Alabbasi, C. Cavdar, and D. Schupke,</span> <span class="venue">“A survey of wireless networks for future aerial communications (FACOM),” <em>IEEE Communications Surveys &amp; Tutorials</em>, vol. 23, no. 4, pp. 2833–2884, 2021.</span></li>
+      <li><span class="title">W.-H. Lee, M. Özger, U. Challita, and K. W. Sung,</span> <span class="venue">“Noise learning-based denoising autoencoder,” <em>IEEE Communications Letters</em>, vol. 25, no. 9, pp. 2983–2987, Sept. 2021.</span></li>
+      <li><span class="title">M. Tavana, M. Özger, A. Baltaci, B. Schleicher, D. Schupke, and C. Cavdar,</span> <span class="venue">“Wireless power transfer for aircraft IoT applications: system design and measurements,” <em>IEEE Internet of Things Journal</em>, vol. 8, no. 15, pp. 11834–11846, Aug. 2021.</span></li>
+      <li><span class="title">W.-H. Lee, M. Özger, and U. Challita,</span> <span class="venue">“Geometric sequential learning dynamics,” <em>IEEE Communications Letters</em>, vol. 25, no. 2, pp. 542–545, Feb. 2021.</span></li>
+      <li><span class="title">A. Azari, M. Özger, and C. Cavdar,</span> <span class="venue">“Risk-aware resource allocation for URLLC: challenges and strategies with machine learning,” <em>IEEE Communications Magazine</em>, vol. 57, no. 3, pp. 42–48, Mar. 2019.</span></li>
+      <li><span class="title">M. Vondra, M. Özger, D. Schupke, and C. Cavdar,</span> <span class="venue">“Integration of satellite and aerial communications for heterogeneous flying vehicles,” <em>IEEE Network</em>, vol. 32, no. 5, pp. 62–69, Sep. 2018.</span></li>
+      <li><span class="title">K. Cepni, M. Özger, and O. B. Akan,</span> <span class="venue">“Event estimation accuracy of social sensing with Facebook for social Internet of Vehicles,” <em>IEEE Internet of Things Journal</em>, vol. 5, no. 4, pp. 2449–2456, Aug. 2018.</span></li>
+      <li><span class="title">M. Özger, O. Cetinkaya, and O. B. Akan,</span> <span class="venue">“Energy harvesting cognitive radio networking for IoT-enabled smart grid,” <em>Mobile Networks and Applications</em>, vol. 23, no. 4, pp. 956–966, Aug. 2018.</span></li>
+      <li><span class="title">M. Özger, F. Alagoz, and O. B. Akan,</span> <span class="venue">“Clustering in multi-channel cognitive radio ad hoc and sensor networks,” <em>IEEE Communications Magazine</em>, vol. 56, no. 4, pp. 156–162, Apr. 2018.</span></li>
+      <li><span class="title">O. B. Akan, O. Cetinkaya, C. Koca, and M. Özger,</span> <span class="venue">“Internet of hybrid energy harvesting things,” <em>IEEE Internet of Things Journal</em>, vol. 5, no. 2, pp. 736–746, Apr. 2018.</span></li>
+      <li><span class="title">T. Long, M. Özger, and O. B. Akan,</span> <span class="venue">“Energy neutral Internet of Drones,” <em>IEEE Communications Magazine</em>, vol. 56, no. 1, pp. 22–28, Jan. 2018.</span></li>
+      <li><span class="title">M. Özger, E. Fadel, and O. B. Akan,</span> <span class="venue">“Event-to-sink spectrum-aware clustering in mobile cognitive radio sensor networks,” <em>IEEE Transactions on Mobile Computing</em>, vol. 15, no. 9, pp. 2221–2233, Sep. 2016.</span></li>
+      <li><span class="title">M. Özger and O. B. Akan,</span> <span class="venue">“On the utilization of spectrum opportunity in cognitive radio networks,” <em>IEEE Communications Letters</em>, vol. 20, no. 1, pp. 157–160, Jan. 2016.</span></li>
+      <li><span class="title">D. Kilinc, M. Özger, and O. B. Akan,</span> <span class="venue">“On the maximum coverage area of wireless networked control systems with maximum cost-efficiency under convergence constraint,” <em>IEEE Transactions on Automatic Control</em>, vol. 60, no. 7, pp. 1910–1914, Nov. 2014.</span></li>
+    </ol>
+  </section>
 
-    function filterPublications() {
-      const q = searchInput.value.trim().toLowerCase();
+  <section id="book-chapters">
+    <h2>Peer-reviewed book chapters</h2>
+    <ol class="pub-list">
+      <li><span class="title">O. Cetinkaya, M. Özger, and O. B. Akan,</span> <span class="venue">“Internet of energy harvesting cognitive radios,” pp. 125–150, in <em>Towards Cognitive IoT Networks</em>, Springer Nature, 2019.</span></li>
+      <li><span class="title">M. Özger, O. Cetinkaya, and O. B. Akan,</span> <span class="venue">“Energy harvesting cognitive radios in smart cities,” pp. 3–20, in <em>Transportation and Power Grid in Smart Cities: Communication Networks and Services</em>, John Wiley, 2018.</span></li>
+      <li><span class="title">K. Cepni, M. Özger, and O. B. Akan,</span> <span class="venue">“Vehicular social sensor networks,” in <em>Vehicular Social Networks</em>, CRC Press, 2017.</span></li>
+      <li><span class="title">M. Özger, E. B. Pehlivanoglu, and O. B. Akan,</span> <span class="venue">“Multimedia communication in cognitive radio sensor networks,” in <em>Wireless Multimedia Sensor Networks (WMSNs): Architectures, Protocols and Applications</em>, CRC Press, 2016.</span></li>
+      <li><span class="title">E. B. Pehlivanoglu, M. Özger, and O. B. Akan,</span> <span class="venue">“Sensing coverage and connectivity in cognitive radio sensor networks,” in <em>Cognitive Radio Sensor Networks: Applications, Architectures and Challenges</em>, IGI Global, 2014.</span></li>
+    </ol>
+  </section>
 
-      items.forEach((item) => {
-        const raw = item.getAttribute('data-raw') || item.textContent;
-        item.setAttribute('data-raw', raw);
-        const match = raw.toLowerCase().includes(q);
-        item.style.display = match ? '' : 'none';
-        item.innerHTML = q ? highlight(raw, q) : raw;
-      });
+  <section id="conference-papers">
+    <h2>Peer-reviewed conference papers</h2>
+    <ol class="pub-list">
+      <li><span class="title">I. A. Meer, A. Baltaci, M. Özger, D. Schupke, and C. Cavdar,</span> <span class="venue">“Multi-connectivity for UAVs: a measurement study of integrating cellular, aerial mesh, and LEO satellite links,” <em>IEEE EuCNC</em>, 2026, pp. 1–6.</span></li>
+      <li><span class="title">L. Pelz, A. J. Awan, and M. Özger,</span> <span class="venue">“A neuromorphic approach to LDPC decoding with spiking belief propagation,” <em>IEEE EuCNC</em>, 2026, pp. 1–6.</span></li>
+      <li><span class="title">Q. Wang, K. Li, O. A. Topal, O. T. Demir, M. Özger, and C. Cavdar,</span> <span class="venue">“Energy saving for cell-free massive MIMO networks: a multi-agent deep reinforcement learning approach,” <em>IEEE ICC</em>, 2026, pp. 1–6.</span></li>
+      <li><span class="title">J. Liu, I. A. Meer, C. Cavdar, and M. Özger,</span> <span class="venue">“Incremental learning-based open-set classification of unknown UAVs via RF signal semantics,” <em>IEEE ICC</em>, 2026, pp. 1–6.</span></li>
+      <li><span class="title">S. S. S. G. Seeram, M. Özger, and C. Cavdar,</span> <span class="venue">“In-orbit processing and Doppler-adaptive waveforms in O-RAN-enabled LEO networks: how much can we gain?,” <em>IEEE Asilomar</em>, 2025, pp. 1–5.</span></li>
+      <li><span class="title">I. A. Meer, B. Hörmann, M. Özger, F. Geyer, A. Viseras, D. Schupke, and C. Cavdar,</span> <span class="venue">“Explainable AI for UAV mobility management: a deep Q-network approach for handover minimization,” <em>IEEE PIMRC</em>, 2025.</span></li>
+      <li><span class="title">S. T. Islam, M. Ganjalizadeh, H. S. Ghadikolaei, and M. Özger,</span> <span class="venue">“Enhancing URLLC availability in multi-connectivity scenarios using deep reinforcement learning,” <em>IEEE EuCNC</em>, 2025.</span></li>
+      <li><span class="title">A. Manzoor, M. Özger, and C. Cavdar,</span> <span class="venue">“Risk-aware backup path allocation in O-RAN based integrated terrestrial and non-terrestrial networks,” <em>IEEE DRCN</em>, 2025.</span></li>
+      <li><span class="title">F. Giarre, I. A. Meer, M. Masoudi, M. Özger, and C. Cavdar,</span> <span class="venue">“Hierarchical multi-agent DRL for soft handovers between edge clouds in Open RAN,” <em>IEEE ICMLCN</em>, 2025.</span></li>
+      <li><span class="title">F. Zhou, P. Wang, M. Özger, and C. Cavdar,</span> <span class="venue">“Blind detection of drones using OFDM-based Zadoff-Chu sequences with field tests,” <em>IEEE ICC</em>, 2025.</span></li>
+      <li><span class="title">S. S. S. G. Seeram, L. Feltrin, M. Özger, S. Zhang, and C. Cavdar,</span> <span class="venue">“Handover delay minimization in non-terrestrial networks: impact of Open RAN functional splits,” <em>IEEE ASMS/SPSC</em>, Sitges, Spain, 2025, pp. 1–8.<span class="award">Best Paper</span></span></li>
+      <li><span class="title">A. Manzoor, M. Özger, and C. Cavdar,</span> <span class="venue">“Optimizing UAV deployment for enhanced cellular network capacity: a joint optimization approach,” <em>IEEE ICCSPA</em>, Istanbul, Türkiye, 2024, pp. 1–6.</span></li>
+      <li><span class="title">A. Manzoor, M. Özger, D. Schupke, and C. Cavdar,</span> <span class="venue">“Combined airspace and non-terrestrial 6G networks for advanced air mobility,” <em>IEEE DRCN</em>, Montreal, QC, Canada, 2024, pp. 1–7.</span></li>
+      <li><span class="title">S. S. S. G. Seeram, L. Feltrin, M. Özger, S. Zhang, and C. Cavdar,</span> <span class="venue">“Feasibility study of function splits in RAN architectures with LEO satellites,” <em>IEEE EuCNC &amp; 6G Summit</em>, Antwerp, Belgium, 2024, pp. 1–6.</span></li>
+      <li><span class="title">I. A. Meer, K.-L. Besser, M. Özger, H. V. Poor, and C. Cavdar,</span> <span class="venue">“Learning-based dynamic cluster reconfiguration for UAV mobility management with 3D beamforming,” <em>IEEE ICMLCN</em>, Stockholm, Sweden, 2024, pp. 1–6.</span></li>
+      <li><span class="title">J. Chen, M. Özger, and C. Cavdar,</span> <span class="venue">“Nash soft actor-critic LEO satellite handover management algorithm for flying vehicles,” <em>IEEE ICMLCN</em>, Stockholm, Sweden, 2024, pp. 1–6.</span></li>
+      <li><span class="title">Y. Deng, I. A. Meer, S. Zhang, M. Özger, and C. Cavdar,</span> <span class="venue">“D3QN-based trajectory and handover management for UAVs co-existing with terrestrial users,” <em>IEEE WiOpt</em>, Singapore, 2023, pp. 1–8.</span></li>
+      <li><span class="title">S. S. S. G. Seeram, S. Zhang, M. Özger, A. Grabs, J. Holis, and C. Cavdar,</span> <span class="venue">“Aerial base stations: practical considerations for power consumption and service time,” <em>IEEE GLOBECOM</em>, Kuala Lumpur, Malaysia, 2023, pp. 1–6.</span></li>
+      <li><span class="title">K. Hao, J. M. Cortes, and M. Özger,</span> <span class="venue">“Counterfactual and causal analysis for AI-based modulation and coding scheme selection,” <em>IEEE GLOBECOM Workshops</em>, Kuala Lumpur, Malaysia, 2023, pp. 1–6.</span></li>
+      <li><span class="title">I. A. Meer, K.-L. Besser, M. Özger, H. V. Poor, and C. Cavdar,</span> <span class="venue">“Reinforcement learning-based power allocation for UAVs with varying reliability requirements,” <em>IEEE Asilomar</em>, Pacific Grove, CA, USA, 2023, pp. 724–728.</span></li>
+      <li><span class="title">S. Cheng, O. A. Topal, M. Özger, C. Cavdar, L. Liu, and O. Edfors,</span> <span class="venue">“mmWave massive MIMO processing in demanding environments — an aircraft cabin deployment study,” <em>IEEE Asilomar</em>, Pacific Grove, CA, USA, 2023, pp. 1631–1635.</span></li>
+      <li><span class="title">G. N. Sharma, M. Ganjalizadeh, D. Patel, and M. Özger,</span> <span class="venue">“Dynamic spatial diversity via reinforcement learning for ultra-reliable low-latency communications,” <em>European Wireless</em>, Rome, Italy, 2023, pp. 284–289.</span></li>
+      <li><span class="title">O. Cetinkaya, M. Özger, and D. De Roure,</span> <span class="venue">“Coverage performance of UAV-powered sensors for energy-neutral networks with recharging stations,” <em>IEEE ICC</em>, Rome, Italy, 2023, pp. 2902–2908.</span></li>
+      <li><span class="title">S. Cheng, O. A. Topal, M. Özger, C. Cavdar, L. Liu, and O. Edfors,</span> <span class="venue">“A hardware-in-the-loop simulator for mmWave massive MIMO using PYNQ framework,” <em>IEEE MWSCAS</em>, Tempe, AZ, USA, 2023, pp. 698–702.</span></li>
+      <li><span class="title">M. Özger et al.,</span> <span class="venue">“6G for connected sky: a vision for integrating terrestrial and non-terrestrial networks,” <em>EuCNC/6G Summit</em>, Gothenburg, Sweden, 2023, pp. 711–716.</span></li>
+      <li><span class="title">F. Salehi, M. Özger, N. Neda, and C. Cavdar,</span> <span class="venue">“Ultra-reliable low-latency communication for aerial vehicles via multi-connectivity,” <em>EuCNC/6G Summit</em>, Grenoble, France, 2022, pp. 166–171.</span></li>
+      <li><span class="title">A. Bolakhrif, M. Özger, D. Sandberg, and C. Cavdar,</span> <span class="venue">“AI-assisted network traffic prediction without warm-up periods,” <em>IEEE VTC-Spring</em>, Helsinki, Finland, 2022, pp. 1–6.</span></li>
+      <li><span class="title">I. A. Meer, W.-H. Lee, M. Özger, C. Cavdar, and K. W. Sung,</span> <span class="venue">“Low-latency MAC design for pairwise random networks,” <em>IEEE VTC-Spring</em>, Helsinki, Finland, 2022, pp. 1–6.</span></li>
+      <li><span class="title">O. A. Topal, M. Özger, D. Schupke, E. Björnson, and C. Cavdar,</span> <span class="venue">“mmWave communications for indoor dense spaces: ray-tracing based channel characterization and performance comparison,” <em>IEEE ICC</em>, Seoul, Korea, 2022, pp. 516–521.</span></li>
+      <li><span class="title">D. Brunello, I. Johansson S., M. Özger, and C. Cavdar,</span> <span class="venue">“Low-latency low-loss scalable throughput in 5G networks,” <em>IEEE VTC-Spring</em>, Helsinki, Finland, 2021, pp. 1–7.</span></li>
+      <li><span class="title">M. Tavana, M. Özger, A. Baltaci, B. Schleicher, J. Tepper, S. Duhovnikov, D. Schupke, and C. Cavdar,</span> <span class="venue">“Wireless power transfer system design for low-rate in-cabin applications,” <em>IEEE ICCE</em>, 2021, pp. 235–240.</span></li>
+      <li><span class="title">J. Tepper, A. Baltaci, B. Schleicher, A. Drexler, S. Duhovnikov, M. Tavana, M. Özger, C. Cavdar, and D. Schupke,</span> <span class="venue">“Evaluation of RF wireless power transfer for low-power aircraft sensors,” <em>AIAA/IEEE DASC</em>, San Antonio, TX, USA, 2020, pp. 1–6.</span></li>
+      <li><span class="title">A. Azari, F. Ghavimi, M. Özger, R. Jäntti, and C. Cavdar,</span> <span class="venue">“Machine learning assisted handover and resource management for cellular connected drones,” <em>IEEE VTC-Spring</em>, Antwerp, Belgium, 2020, pp. 1–7.</span></li>
+      <li><span class="title">D. Tomic, S. Hofmann, M. Özger, D. Schupke, and C. Cavdar,</span> <span class="venue">“Quality of service aware traffic management for aircraft communications,” <em>IEEE VTC-Spring</em>, Antwerp, Belgium, 2020, pp. 1–6.</span></li>
+      <li><span class="title">A. Meer, M. Özger, and C. Cavdar,</span> <span class="venue">“On the localization of unmanned aerial vehicles with cellular networks,” <em>IEEE WCNC</em>, Seoul, Korea, 2020, pp. 1–6.</span></li>
+      <li><span class="title">P. Wang, M. Özger, C. Cavdar, and M. Petrova,</span> <span class="venue">“Beyond visual line of sight piloting of UAVs using millimeter-wave cellular networks,” <em>IEEE PIMRC</em>, Istanbul, Turkey, 2019, pp. 1–6.</span></li>
+      <li><span class="title">I. A. Meer, M. Özger, M. Lundmark, K. W. Sung, and C. Cavdar,</span> <span class="venue">“Ground based sense and avoid system for air traffic management,” <em>IEEE PIMRC</em>, Istanbul, Turkey, 2019, pp. 1–6.</span></li>
+      <li><span class="title">S. Hofmann, V. Megas, M. Özger, D. Schupke, F. H. P. Fitzek, and C. Cavdar,</span> <span class="venue">“Combined optimal topology formation and rate allocation for aircraft-to-aircraft communications,” <em>IEEE ICC</em>, Shanghai, China, 2019, pp. 1–6.</span></li>
+      <li><span class="title">M. Özger, M. Vondra, and C. Cavdar,</span> <span class="venue">“Towards beyond visual line of sight piloting of UAVs with ultra-reliable low-latency communication,” <em>IEEE GLOBECOM</em>, Abu Dhabi, United Arab Emirates, 2018, pp. 1–6.</span></li>
+      <li><span class="title">E. B. Pehlivanoglu, M. Özger, O. Cetinkaya, and O. B. Akan,</span> <span class="venue">“Harvesting-throughput trade-off for wireless-powered smart grid IoT applications: an experimental study,” <em>IEEE ICC</em>, Kansas City, MO, USA, 2018, pp. 1–6.</span></li>
+      <li><span class="title">E. Dinc, M. Özger, A. F. Ates, I. Delibalta, and O. B. Akan,</span> <span class="venue">“Crowdsourcing-based mobile network tomography for xG wireless systems,” <em>IEEE ISCC</em>, Messina, Italy, 2016, pp. 346–351.<span class="award">Best Paper</span></span></li>
+      <li><span class="title">M. Özger and O. B. Akan,</span> <span class="venue">“Maximization of energy-efficiency under convergence constraint in wireless networked control systems,” <em>IEEE ICC</em>, London, UK, 2015, pp. 5973–5978.</span></li>
+      <li><span class="title">D. Kilinc, M. Özger, and O. B. Akan,</span> <span class="venue">“On the maximum coverage area of wireless networked control systems under stability and cost-efficiency constraints,” <em>IEEE GLOBECOM</em>, Atlanta, GA, USA, 2013, pp. 274–279.</span></li>
+      <li><span class="title">M. Özger and O. B. Akan,</span> <span class="venue">“Event-driven spectrum-aware clustering in cognitive radio sensor networks,” <em>IEEE INFOCOM</em>, Turin, Italy, 2013, pp. 1483–1491.</span></li>
+    </ol>
+  </section>
 
-      sections.forEach((section) => {
-        const visible = [...section.querySelectorAll('li')].some(li => li.style.display !== 'none');
-        section.style.display = visible ? '' : 'none';
-      });
-    }
+  <footer>
+    <span>© Mustafa Özger</span>
+    <a href="index.html">← Back to homepage</a>
+  </footer>
 
-    searchInput.addEventListener('input', filterPublications);
-  </script>
+</main>
+
+<script>
+  const searchInput = document.getElementById('pubSearch');
+  const countEl = document.getElementById('pubCount');
+  const sections = [...document.querySelectorAll('main > section')];
+  const items = [...document.querySelectorAll('.pub-list li')];
+  items.forEach(li => li.setAttribute('data-raw', li.innerHTML));
+
+  function escapeRegExp(s){return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');}
+  function highlight(html, q){
+    if(!q) return html;
+    return html.replace(/>([^<]+)</g, (m, text) => {
+      const re = new RegExp('('+escapeRegExp(q)+')','ig');
+      return '>' + text.replace(re,'<mark>$1</mark>') + '<';
+    });
+  }
+  function filter(){
+    const q = searchInput.value.trim().toLowerCase();
+    let visible = 0;
+    items.forEach(li => {
+      const raw = li.getAttribute('data-raw');
+      const match = !q || raw.toLowerCase().includes(q);
+      li.style.display = match ? '' : 'none';
+      li.innerHTML = highlight(raw, q);
+      if(match) visible++;
+    });
+    sections.forEach(sec => {
+      const any = [...sec.querySelectorAll('.pub-list li')].some(li => li.style.display !== 'none');
+      sec.style.display = any ? '' : 'none';
+    });
+    countEl.textContent = q ? (visible + ' match' + (visible===1?'':'es')) : '';
+  }
+  searchInput.addEventListener('input', filter);
+
+  const toggle = document.getElementById('themeToggle');
+  toggle.addEventListener('click', () => {
+    const cur = document.documentElement.getAttribute('data-theme') || 'light';
+    const next = cur === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try{ localStorage.setItem('theme', next); }catch(e){}
+  });
+</script>
 </body>
 </html>
