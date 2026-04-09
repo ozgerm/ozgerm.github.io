@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mustafa Özger | Academic Website</title>
-  <meta name="description" content="Academic website of Mustafa Özger, Assistant Professor at Aalborg University and Researcher at KTH Royal Institute of Technology." />
+  <title>Mustafa Özger</title>
+  <meta name="description" content="Academic homepage of Mustafa Özger, Assistant Professor at Aalborg University and Researcher at KTH Royal Institute of Technology." />
   <style>
-    :root{
-      --bg:#f6f8fb;
+    :root {
+      --bg:#f5f7fb;
       --surface:#ffffff;
-      --surface-2:#eef3f8;
-      --text:#16212e;
-      --muted:#5b6b7d;
-      --line:#d9e2ec;
-      --accent:#0f5ea8;
-      --accent-2:#0b84f3;
-      --shadow:0 16px 40px rgba(17,24,39,.08);
-      --radius:22px;
-      --max:1160px;
+      --surface-2:#f0f4fa;
+      --text:#132238;
+      --muted:#53657c;
+      --line:#d8e0eb;
+      --accent:#0d5ea8;
+      --accent-dark:#094a86;
+      --shadow:0 14px 40px rgba(19,34,56,.08);
+      --radius:20px;
+      --max:1120px;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
@@ -25,278 +25,94 @@
       margin:0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color:var(--text);
-      background:
-        radial-gradient(circle at top right, rgba(11,132,243,.09), transparent 22%),
-        linear-gradient(180deg, #fbfdff 0%, #f4f7fb 100%);
-      line-height:1.65;
+      background:linear-gradient(180deg,#f8fbff 0%,#f4f7fb 100%);
+      line-height:1.68;
     }
-    a{color:var(--accent); text-decoration:none}
+    a{color:var(--accent);text-decoration:none}
     a:hover{text-decoration:underline}
-    img{max-width:100%; display:block}
-    .wrap{max-width:var(--max); margin:0 auto; padding:0 24px}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
     .topbar{
-      position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(14px);
-      background:rgba(246,248,251,.85);
-      border-bottom:1px solid rgba(217,226,236,.7);
+      position:sticky;top:0;z-index:50;
+      backdrop-filter: blur(12px);
+      background:rgba(248,251,255,.86);
+      border-bottom:1px solid rgba(216,224,235,.8);
     }
-    .topbar-inner{
-      max-width:var(--max); margin:0 auto; padding:16px 24px;
-      display:flex; align-items:center; justify-content:space-between; gap:24px;
-    }
-    .brand{
-      font-weight:800; letter-spacing:.02em; color:var(--text); white-space:nowrap;
-    }
-    .nav{
-      display:flex; flex-wrap:wrap; gap:16px; justify-content:flex-end;
-      font-size:.96rem;
-    }
-    .nav a{
-      color:var(--muted); font-weight:600; padding:8px 10px; border-radius:999px;
-      transition:.2s ease;
-    }
-    .nav a:hover, .nav a.active{
-      color:var(--accent);
-      background:rgba(15,94,168,.08);
-      text-decoration:none;
-    }
+    .topbar-inner{max-width:var(--max);margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-size:1.06rem;font-weight:800;color:var(--text);letter-spacing:.02em}
+    .nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
+    .nav a{padding:8px 12px;border-radius:999px;color:var(--muted);font-weight:600;font-size:.96rem}
+    .nav a:hover,.nav a.active{background:rgba(13,94,168,.09);color:var(--accent);text-decoration:none}
 
-    .hero{
-      padding:54px 0 22px;
+    .hero{padding:42px 0 16px}
+    .hero-card{
+      background:linear-gradient(135deg,rgba(13,94,168,.08),rgba(13,94,168,.02) 48%,rgba(255,255,255,.82));
+      border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow);
+      padding:34px;
     }
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.45fr .95fr;
-      gap:28px;
-      align-items:stretch;
-    }
-    .panel{
-      background:var(--surface);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-    }
-    .hero-main{
-      padding:38px;
-      position:relative;
-      overflow:hidden;
-    }
-    .hero-main::after{
-      content:"";
-      position:absolute;
-      width:340px; height:340px; right:-120px; top:-150px;
-      background:radial-gradient(circle, rgba(11,132,243,.18) 0%, rgba(11,132,243,0) 68%);
-      pointer-events:none;
-    }
-    .eyebrow{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 14px; border-radius:999px;
-      background:rgba(15,94,168,.08); color:var(--accent);
-      font-weight:700; font-size:.88rem; letter-spacing:.02em;
-      margin-bottom:16px;
-    }
-    h1{
-      margin:0 0 10px;
-      font-size:clamp(2.2rem, 4vw, 4rem);
-      line-height:1.05;
-      letter-spacing:-.03em;
-    }
-    .subtitle{
-      font-size:1.1rem;
-      color:var(--muted);
-      max-width:58ch;
-      margin-bottom:18px;
-    }
-    .hero-copy{
-      max-width:65ch;
-      color:#263547;
-      font-size:1.02rem;
-      margin-bottom:24px;
-    }
-    .hero-actions{
-      display:flex; flex-wrap:wrap; gap:12px;
-      margin-bottom:30px;
-    }
-    .btn{
-      display:inline-flex; align-items:center; gap:10px;
-      padding:12px 18px; border-radius:999px;
-      border:1px solid var(--line);
-      background:var(--surface);
-      color:var(--text);
-      font-weight:700;
-      transition:.2s ease;
-    }
-    .btn:hover{transform:translateY(-1px); text-decoration:none}
-    .btn.primary{
-      background:linear-gradient(135deg, var(--accent), var(--accent-2));
-      color:#fff; border-color:transparent;
-      box-shadow:0 14px 24px rgba(15,94,168,.18);
-    }
-    .stats{
-      display:grid;
-      grid-template-columns:repeat(3, minmax(0,1fr));
-      gap:14px;
-      margin-top:10px;
-    }
-    .stat{
-      padding:16px 18px; border-radius:18px; background:var(--surface-2); border:1px solid #e3ebf3;
-    }
-    .stat strong{
-      display:block; font-size:1.4rem; line-height:1.1; margin-bottom:5px;
-    }
-    .stat span{color:var(--muted); font-size:.92rem}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:34px;align-items:center}
+    .eyebrow{display:inline-block;padding:8px 14px;border-radius:999px;background:rgba(13,94,168,.1);color:var(--accent);font-size:.88rem;font-weight:800;letter-spacing:.03em;margin-bottom:16px}
+    h1{margin:0 0 10px;font-size:clamp(2.3rem,4.5vw,4rem);line-height:1.02;letter-spacing:-.03em}
+    .subtitle{margin:0 0 16px;color:var(--muted);font-size:1.12rem;max-width:56ch}
+    .hero p{margin:0 0 12px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 16px;border-radius:999px;font-weight:700;border:1px solid var(--line);background:#fff;color:var(--text);box-shadow:0 8px 18px rgba(19,34,56,.05)}
+    .btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+    .btn:hover{text-decoration:none;transform:translateY(-1px)}
+    .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:22px}
+    .stat{padding:14px 16px;border-radius:18px;background:rgba(255,255,255,.78);border:1px solid rgba(216,224,235,.9)}
+    .stat strong{display:block;font-size:1.4rem;line-height:1.05;margin-bottom:4px}
+    .stat span{font-size:.92rem;color:var(--muted)}
+    .portrait-wrap{justify-self:end;width:min(100%,360px)}
+    .portrait-card{background:rgba(255,255,255,.82);border:1px solid var(--line);border-radius:26px;box-shadow:var(--shadow);padding:18px}
+    .portrait{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:20px;background:#edf2f8;display:block}
+    .caption{padding-top:14px}
+    .caption strong{display:block;font-size:1.04rem}
+    .caption span{color:var(--muted);font-size:.95rem}
 
-    .profile-card{
-      padding:30px;
-      display:flex;
-      flex-direction:column;
-      gap:22px;
-    }
-    .avatar-shell{
-      padding:16px;
-      border-radius:24px;
-      background:linear-gradient(180deg, #f2f7fc 0%, #ffffff 100%);
-      border:1px solid var(--line);
-    }
-    .profile-title h2{
-      margin:0 0 6px;
-      font-size:1.55rem;
-      line-height:1.15;
-    }
-    .profile-title p{
-      margin:0;
-      color:var(--muted);
-    }
-    .meta-list{
-      display:grid; gap:14px;
-    }
-    .meta-item{
-      padding:14px 16px;
-      border:1px solid var(--line);
-      border-radius:18px;
-      background:#fbfdff;
-    }
-    .meta-item .label{
-      display:block; font-size:.8rem; text-transform:uppercase; letter-spacing:.06em; color:#718295; margin-bottom:4px;
-    }
-    .meta-item .value{
-      color:var(--text); font-weight:600; word-break:break-word;
-    }
+    section{padding:18px 0;scroll-margin-top:86px}
+    .section-card{background:var(--surface);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:28px}
+    .section-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-end;margin-bottom:16px}
+    .section-head h2{margin:0;font-size:1.75rem;letter-spacing:-.02em}
+    .section-head p{margin:0;color:var(--muted);max-width:56ch}
 
-    section{
-      padding:18px 0;
-      scroll-margin-top:90px;
-    }
-    .section-card{
-      padding:30px;
-    }
-    .section-head{
-      display:flex; align-items:flex-end; justify-content:space-between; gap:18px; margin-bottom:18px;
-    }
-    .section-head h2{
-      margin:0; font-size:1.8rem; letter-spacing:-.02em;
-    }
-    .section-head p{
-      margin:0; color:var(--muted); max-width:56ch;
-    }
+    .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+    .chip{padding:8px 12px;border-radius:999px;background:var(--surface-2);border:1px solid #e1e7f0;color:var(--accent-dark);font-weight:700;font-size:.92rem}
+    .grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .card{padding:20px;border-radius:20px;background:#fbfdff;border:1px solid var(--line);height:100%}
+    .card h3{margin:0 0 10px;font-size:1.05rem}
+    .card p{margin:0;color:#32455c}
+    .card ul{margin:10px 0 0 18px;padding:0;color:#32455c}
+    .card li+li{margin-top:6px}
 
-    .tags{
-      display:flex; flex-wrap:wrap; gap:10px;
-      margin-top:18px;
-    }
-    .tag{
-      padding:8px 12px; border-radius:999px;
-      background:rgba(15,94,168,.08); color:var(--accent); font-weight:700; font-size:.9rem;
-    }
+    .news-list,.pub-list,.plain-list{display:grid;gap:12px}
+    .news-item,.pub-item,.timeline-item{padding:18px 20px;border-radius:18px;border:1px solid var(--line);background:#fbfdff}
+    .news-item strong,.pub-item strong{display:block;margin-bottom:6px}
+    .muted{color:var(--muted)}
+    .timeline{display:grid;gap:14px}
+    .timeline-item{display:grid;grid-template-columns:160px 1fr;gap:18px;align-items:start}
+    .timeline-time{font-weight:800;color:var(--accent)}
+    .timeline-item h3{margin:0 0 6px;font-size:1.02rem}
+    .timeline-item p{margin:0;color:#32455c}
 
-    .grid-2{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:18px}
-    .grid-3{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:18px}
+    .opportunity{background:linear-gradient(135deg, rgba(13,94,168,.08), rgba(255,255,255,.85));}
+    .contact-box{padding:20px;border-radius:20px;border:1px solid var(--line);background:#fbfdff}
+    .contact-box h3{margin:0 0 10px}
+    .contact-box p,.contact-box li{color:#32455c}
+    .contact-box ul{margin:10px 0 0 18px;padding:0}
+    .footer{padding:34px 0 52px;color:var(--muted);font-size:.95rem}
+    code{font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;background:#eef3fa;padding:2px 6px;border-radius:8px}
 
-    .feature{
-      padding:20px;
-      border:1px solid var(--line);
-      border-radius:20px;
-      background:#fbfdff;
-      height:100%;
-    }
-    .feature h3{margin:0 0 10px; font-size:1.08rem}
-    .feature p{margin:0; color:#304153}
-    .feature ul{margin:10px 0 0 18px; padding:0; color:#304153}
-    .feature li + li{margin-top:6px}
-
-    .timeline{display:grid; gap:16px}
-    .timeline-item{
-      display:grid; grid-template-columns:180px 1fr; gap:18px;
-      padding:18px 0;
-      border-top:1px solid var(--line);
-    }
-    .timeline-item:first-child{border-top:none; padding-top:0}
-    .time{
-      font-weight:800; color:var(--accent);
-    }
-    .timeline-item h3{
-      margin:0 0 4px; font-size:1.08rem;
-    }
-    .timeline-item p{
-      margin:0; color:#304153;
-    }
-    .timeline-item .sub{
-      color:var(--muted); font-size:.95rem; margin-bottom:8px;
-    }
-
-    .pub-list{display:grid; gap:14px}
-    .pub{
-      padding:18px 20px;
-      border:1px solid var(--line);
-      border-radius:18px;
-      background:#fbfdff;
-    }
-    .pub-top{
-      display:flex; align-items:flex-start; justify-content:space-between; gap:14px; margin-bottom:8px;
-    }
-    .pub h3{
-      margin:0; font-size:1.02rem; line-height:1.45;
-    }
-    .year{
-      flex:0 0 auto;
-      padding:6px 10px; border-radius:999px;
-      background:rgba(15,94,168,.1); color:var(--accent); font-weight:800; font-size:.88rem;
-    }
-    .pub p{
-      margin:0; color:#415467;
-    }
-
-    .mini-cards{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:16px}
-    .mini{
-      padding:18px 20px;
-      border-radius:18px;
-      background:var(--surface-2);
-      border:1px solid #e3ebf3;
-    }
-    .mini h3{margin:0 0 8px; font-size:1rem}
-    .mini p{margin:0; color:#304153}
-
-    footer{
-      padding:36px 0 56px;
-      color:var(--muted);
-      text-align:center;
-      font-size:.95rem;
-    }
-
-    @media (max-width: 980px){
-      .hero-grid, .grid-2, .grid-3, .mini-cards{grid-template-columns:1fr}
+    @media (max-width: 900px) {
+      .hero-grid,.grid-2,.grid-3{grid-template-columns:1fr}
+      .portrait-wrap{justify-self:start;max-width:320px}
       .timeline-item{grid-template-columns:1fr}
-      .topbar-inner{flex-direction:column; align-items:flex-start}
+      .topbar-inner{flex-direction:column;align-items:flex-start}
       .nav{justify-content:flex-start}
     }
-
-    @media (max-width: 640px){
-      .wrap, .topbar-inner{padding-left:16px; padding-right:16px}
-      .hero{padding-top:30px}
-      .hero-main, .profile-card, .section-card{padding:22px}
-      .stats{grid-template-columns:1fr}
-      h1{font-size:2.35rem}
-      .section-head{flex-direction:column; align-items:flex-start}
+    @media (max-width: 640px) {
+      .wrap,.topbar-inner{padding-left:16px;padding-right:16px}
+      .hero-card,.section-card{padding:22px}
     }
   </style>
 </head>
@@ -307,10 +123,10 @@
       <nav class="nav" aria-label="Primary">
         <a href="#about">About</a>
         <a href="#research">Research</a>
+        <a href="#news">News</a>
         <a href="#publications">Publications</a>
         <a href="#experience">Experience</a>
-        <a href="#teaching">Teaching</a>
-        <a href="#service">Service</a>
+        <a href="#opportunities">Join</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -318,462 +134,226 @@
 
   <main id="top" class="wrap">
     <section class="hero">
-      <div class="hero-grid">
-        <article class="panel hero-main">
-          <div class="eyebrow">Assistant Professor · Aalborg University</div>
-          <h1>Mustafa Özger</h1>
-          <p class="subtitle">
-            Researcher in wireless communications, AI-native network management, non-terrestrial networks,
-            information-theoretic learning, and machine learning for engineering systems.
-          </p>
-          <p class="hero-copy">
-            I work at the intersection of communication-network theory, learning-based control, and dependable
-            networked systems. My research spans 5G/6G and non-terrestrial networks, mobility management,
-            localisation, uncertainty-aware inference, and system-level optimisation, with strong engagement in
-            industrially motivated and multi-partner collaborative projects.
-          </p>
-          <div class="hero-actions">
-            <a class="btn primary" href="assets/CV_Mustafa_Ozger.pdf" target="_blank" rel="noopener">Download CV</a>
-            <a class="btn" href="https://scholar.google.com/citations?hl=en&user=sfnbK9cAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
-            <a class="btn" href="https://orcid.org/0000-0001-8517-7996" target="_blank" rel="noopener">ORCID</a>
-            <a class="btn" href="mailto:mozger@es.aau.dk">Email</a>
-          </div>
-          <div class="stats">
-            <div class="stat">
-              <strong>96</strong>
-              <span>research items</span>
+      <div class="hero-card">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">Assistant Professor · Aalborg University</div>
+            <h1>Mustafa Özger</h1>
+            <p class="subtitle">Wireless communications, 5G/6G and non-terrestrial networks, AI-native network management, machine learning for engineering systems, and information-theoretic learning.</p>
+            <p>I am an Assistant Professor at Aalborg University, Copenhagen, and a Researcher at KTH Royal Institute of Technology, Stockholm. My work spans wireless and networked systems, mobility management, localisation, uncertainty-aware inference, dependable communication-system control, and system-level optimisation.</p>
+            <p>Across these themes, I combine communication-theoretic reasoning with data-driven learning to design robust methods for future telecommunication systems and resource-constrained engineering environments.</p>
+            <div class="hero-actions">
+              <a class="btn primary" href="assets/CV_Mustafa_Ozger.pdf" target="_blank" rel="noopener">Download CV</a>
+              <a class="btn" href="publications.html">Full publications</a>
+              <a class="btn" href="mailto:mozger@es.aau.dk">Email</a>
             </div>
-            <div class="stat">
-              <strong>2,173</strong>
-              <span>citations</span>
-            </div>
-            <div class="stat">
-              <strong>23</strong>
-              <span>h-index</span>
+            <div class="stats">
+              <div class="stat"><strong>96</strong><span>research items</span></div>
+              <div class="stat"><strong>2,173</strong><span>citations</span></div>
+              <div class="stat"><strong>23</strong><span>h-index</span></div>
             </div>
           </div>
-        </article>
-
-        <aside class="panel profile-card" aria-label="Profile summary">
-          <div class="avatar-shell">
-            <img src="assets/ozger.jpg" alt="Portrait of Mustafa Özger" onerror="this.onerror=null;this.src='assets/avatar.svg';" />
-          </div>
-          <div class="profile-title">
-            <h2>Academic Profile</h2>
-            <p>Wireless systems, AI for engineering, and future 6G/NTN architectures.</p>
-          </div>
-
-          <div class="meta-list">
-            <div class="meta-item">
-              <span class="label">Affiliation</span>
-              <span class="value">Department of Electronic Systems, Aalborg University, Copenhagen, Denmark</span>
-            </div>
-            <div class="meta-item">
-              <span class="label">Also affiliated with</span>
-              <span class="value">KTH Royal Institute of Technology, Stockholm, Sweden</span>
-            </div>
-            <div class="meta-item">
-              <span class="label">Research focus</span>
-              <span class="value">Machine learning for engineering systems, information-theoretic learning, wireless communications, AI-native network management, and non-terrestrial networks</span>
-            </div>
-            <div class="meta-item">
-              <span class="label">Links</span>
-              <span class="value">
-                <a href="https://vbn.aau.dk/en/persons/mozger/" target="_blank" rel="noopener">AAU profile</a> ·
-                <a href="https://www.kth.se/profile/ozger?l=en" target="_blank" rel="noopener">KTH profile</a> ·
-                <a href="https://orcid.org/0000-0001-8517-7996" target="_blank" rel="noopener">ORCID</a>
-              </span>
+          <div class="portrait-wrap">
+            <div class="portrait-card">
+              <img class="portrait" src="assets/ozger.jpg" onerror="this.onerror=null;this.src='assets/avatar.svg';" alt="Portrait of Mustafa Özger" />
+              <div class="caption">
+                <strong>Department of Electronic Systems</strong>
+                <span>Aalborg University · Copenhagen, Denmark</span>
+              </div>
             </div>
           </div>
-        </aside>
+        </div>
       </div>
     </section>
 
     <section id="about">
-      <div class="panel section-card">
+      <div class="section-card">
         <div class="section-head">
-          <div>
-            <h2>About Me</h2>
-          </div>
+          <h2>About</h2>
+          <p>Research profile grounded in future telecommunications, learning-based control, and engineering decision support.</p>
         </div>
-        <p>
-          I am an Assistant Professor at Aalborg University and a Researcher at KTH Royal Institute of Technology.
-          My work focuses on future telecommunication systems and machine learning for engineering, with expertise
-          across wireless and networked systems, 5G/6G and non-terrestrial networks, AI-native network management,
-          mobility management, localisation, and engineering decision support.
-        </p>
-        <p>
-          A recurring theme in my research is the use of information-theoretic reasoning to guide the design of
-          learning methods: how channel structure, coding principles, and measures of informativeness can improve
-          model selection, dataset design, and reliable inference in safety-critical and resource-constrained
-          engineering environments.
-        </p>
+        <p>My research focuses on machine learning for engineering systems, information-theoretic learning, wireless communications, AI-native network management, non-terrestrial networks, uncertainty-aware inference, localisation, and engineering decision support.</p>
+        <div class="chips">
+          <span class="chip">Machine learning for engineering systems</span>
+          <span class="chip">Information-theoretic learning</span>
+          <span class="chip">Wireless communications</span>
+          <span class="chip">AI-native network management</span>
+          <span class="chip">Non-terrestrial networks</span>
+          <span class="chip">URLLC</span>
+          <span class="chip">Localisation</span>
+          <span class="chip">System-level optimisation</span>
+        </div>
       </div>
     </section>
 
     <section id="research">
-      <div class="panel section-card">
+      <div class="section-card">
         <div class="section-head">
-          <div>
-            <h2>Research Interests</h2>
-          </div>
-          <p>Selected areas that define the current scope of my research and collaborative work.</p>
+          <h2>Research themes</h2>
+          <p>Selected directions distilled from the CV into website-friendly topics.</p>
         </div>
-
-        <div class="tags">
-          <span class="tag">6G & Non-Terrestrial Networks</span>
-          <span class="tag">AI-Native Network Management</span>
-          <span class="tag">Machine Learning for Engineering</span>
-          <span class="tag">Information-Theoretic Learning</span>
-          <span class="tag">Wireless Communications</span>
-          <span class="tag">URLLC & Dependability</span>
-          <span class="tag">Localisation & Sensing</span>
-          <span class="tag">Reinforcement Learning</span>
-          <span class="tag">System-Level Optimisation</span>
-        </div>
-
-        <div class="grid-3" style="margin-top:20px;">
-          <article class="feature">
-            <h3>Learning for communication-system control</h3>
-            <p>
-              Reinforcement learning, multi-agent and hierarchical control, uncertainty-aware modelling,
-              and domain-grounded decision support for complex engineering systems.
-            </p>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Learning-based network control</h3>
+            <p>Reinforcement learning, multi-agent and hierarchical RL, data-driven control, uncertainty-aware modelling, and explainable engineering inference for communication-system decision making.</p>
           </article>
-          <article class="feature">
-            <h3>Future wireless and NTN architectures</h3>
-            <p>
-              Wireless networks, non-terrestrial networks, resource allocation, mobility management, localisation,
-              sensing, and AI-assisted architecture design across terrestrial, aerial, and space segments.
-            </p>
+          <article class="card">
+            <h3>6G and non-terrestrial networking</h3>
+            <p>Architectures and algorithms for terrestrial, aerial, and non-terrestrial systems, including mobility management, resource allocation, reliability, and AI-assisted orchestration.</p>
           </article>
-          <article class="feature">
+          <article class="card">
             <h3>Information-theoretic learning</h3>
-            <p>
-              Representation learning for physical-layer data, channel and signal classification, learnability-aware
-              dataset design, and reliable inference under data scarcity and distribution shift.
-            </p>
+            <p>Model selection, dataset design, representation learning for physical-layer data, and reliable inference under data scarcity and distributional shift.</p>
           </article>
         </div>
-
         <div class="grid-2" style="margin-top:18px;">
-          <article class="feature">
-            <h3>Selected research contributions</h3>
+          <article class="card">
+            <h3>Selected contributions</h3>
             <ul>
-              <li>Mobility management and service availability in cellular-connected UAV systems.</li>
-              <li>Multi-agent and hierarchical DRL for handover, cluster reconfiguration, and power allocation.</li>
-              <li>Risk-aware design for dependable communications and AI-native resource control.</li>
+              <li>Mobility management and service availability for cellular-connected UAV systems.</li>
+              <li>Multi-agent and hierarchical DRL for handover, cluster reconfiguration, power allocation, and trajectory-aware optimisation.</li>
+              <li>Risk-aware and dependability-oriented design for future wireless systems.</li>
             </ul>
           </article>
-          <article class="feature">
-            <h3>Industrial and collaborative engagement</h3>
+          <article class="card">
+            <h3>Collaborative research profile</h3>
             <ul>
-              <li>Project leadership and collaboration with Airbus, Ericsson, Deutsche Telekom, Turkcell, and Viavi.</li>
-              <li>Multi-partner national and international consortia in future telecommunication systems.</li>
-              <li>Research translation across communications, cyber-physical systems, and autonomous platforms.</li>
+              <li>Coordination and proposal leadership in major collaborative projects including 3D-NET and 6G-SKY.</li>
+              <li>Industrial collaboration with Airbus, Ericsson, Deutsche Telekom, Turkcell, Viavi, and other stakeholders.</li>
+              <li>Teaching and supervision across BSc, MSc, PhD, and postdoctoral levels.</li>
             </ul>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="news">
+      <div class="section-card">
+        <div class="section-head">
+          <h2>News & updates</h2>
+          <p>Recent roles and activities that can be updated easily over time.</p>
+        </div>
+        <div class="news-list">
+          <div class="news-item"><strong>2026</strong><span class="muted">Tutorial at IEEE EuCNC 2026 on 6G connectivity for flying vehicles.</span></div>
+          <div class="news-item"><strong>2026</strong><span class="muted">Organizer of the EuCNC 2026 special session on unified terrestrial and non-terrestrial networks for 6G.</span></div>
+          <div class="news-item"><strong>2026</strong><span class="muted">Tutorial at IEEE VTC-Spring 2026 on 6G non-terrestrial networks, Open RAN, handover, and service availability.</span></div>
+          <div class="news-item"><strong>2025</strong><span class="muted">Associate Editor, IEEE Transactions on Vehicular Technology.</span></div>
+          <div class="news-item"><strong>2024</strong><span class="muted">Associate Editor, IEEE Transactions on Mobile Computing.</span></div>
         </div>
       </div>
     </section>
 
     <section id="publications">
-      <div class="panel section-card">
+      <div class="section-card">
         <div class="section-head">
-          <div>
-            <h2>Selected Publications</h2>
-          </div>
-          <p>A small curated list from recent and representative work. The complete publication list is available in the CV.</p>
+          <h2>Selected publications</h2>
+          <p>A few representative publications from the full list.</p>
         </div>
-
         <div class="pub-list">
-          <article class="pub">
-            <div class="pub-top">
-              <h3>Independent PPO-based Robust and Scalable Three-dimensional Configuration for Green Massive MIMO Networks</h3>
-              <span class="year">2026</span>
-            </div>
-            <p><strong>IEEE Transactions on Green Communications and Networking</strong>. Reinforcement-learning-based configuration for green massive MIMO systems.</p>
-          </article>
-
-          <article class="pub">
-            <div class="pub-top">
-              <h3>Hierarchical Multi-Agent DRL-Based Dynamic Cluster Reconfiguration for UAV Mobility Management</h3>
-              <span class="year">2025</span>
-            </div>
-            <p><strong>IEEE Transactions on Cognitive Communications and Networking</strong>. Hierarchical multi-agent learning for UAV mobility management.</p>
-          </article>
-
-          <article class="pub">
-            <div class="pub-top">
-              <h3>6G for Connected Sky: Holistic Adaptive Combined Airspace and Non-Terrestrial Network Architecture</h3>
-              <span class="year">2025</span>
-            </div>
-            <p><strong>IEEE Wireless Communications</strong>. Architecture vision for integrated terrestrial and non-terrestrial 6G connectivity.</p>
-          </article>
-
-          <article class="pub">
-            <div class="pub-top">
-              <h3>Mobility Management for Cellular-Connected UAVs: Model-Based Versus Learning-Based Approaches for Service Availability</h3>
-              <span class="year">2024</span>
-            </div>
-            <p><strong>IEEE Transactions on Network and Service Management</strong>. Comparative study of analytical and learning-based design for UAV mobility management.</p>
-          </article>
-
-          <article class="pub">
-            <div class="pub-top">
-              <h3>When Wireless Localization Meets Artificial Intelligence: Basics, Challenges, Synergies, and Prospects</h3>
-              <span class="year">2023</span>
-            </div>
-            <p><strong>Applied Sciences</strong>. Overview of the interaction between AI and wireless localisation.</p>
-          </article>
-
-          <article class="pub">
-            <div class="pub-top">
-              <h3>A Survey of Wireless Networks for Future Aerial Communications (FACOM)</h3>
-              <span class="year">2021</span>
-            </div>
-            <p><strong>IEEE Communications Surveys & Tutorials</strong>. Survey of wireless networking foundations and challenges for aerial systems.</p>
-          </article>
-
-          <article class="pub">
-            <div class="pub-top">
-              <h3>Risk-Aware Resource Allocation for URLLC: Challenges and Strategies with Machine Learning</h3>
-              <span class="year">2019</span>
-            </div>
-            <p><strong>IEEE Communications Magazine</strong>. Risk-aware design perspectives for ultra-reliable low-latency communication.</p>
-          </article>
-
-          <article class="pub">
-            <div class="pub-top">
-              <h3>Event-to-Sink Spectrum-Aware Clustering in Mobile Cognitive Radio Sensor Networks</h3>
-              <span class="year">2016</span>
-            </div>
-            <p><strong>IEEE Transactions on Mobile Computing</strong>. Earlier foundational work on cognitive radio sensor networking.</p>
-          </article>
+          <div class="pub-item"><strong>Independent PPO-based Robust and Scalable Three-dimensional Configuration for Green Massive MIMO Networks,</strong><span class="muted">1. Q. Wang, S. Zhang, M. Ozger and C. Cavdar, “Independent PPO-based Robust and Scalable Three-dimensional Configuration for Green Massive MIMO Networks,” IEEE Transactions on Green Communications and Networking, Early Access, 2026.</span></div><div class="pub-item"><strong>Hierarchical Multi-Agent DRL-Based Dynamic Cluster Reconfiguration for UAV Mobility Management,</strong><span class="muted">2. I. A. Meer, K.-L. Besser, M. Ozger, D. Schupke, H. V. Poor, and C. Cavdar, “Hierarchical Multi-Agent DRL-Based Dynamic Cluster Reconfiguration for UAV Mobility Management,” IEEE Transactions on Cognitive Communications and Networking, vol. 12, pp. 4957–4971, 2025.</span></div><div class="pub-item"><strong>6G for Connected Sky: Holistic Adaptive Combined Airspace and Non-Terrestrial Network Architecture,</strong><span class="muted">9. S. Zhang, M. Ozger, S. S. S. G. Seeram, I. Godor, L. Feltrin, A. Nordlow, J. Pfeifle, L. Toka, G. Biczok, D. A. Schupke, and C. Cavdar, “6G for Connected Sky: Holistic Adaptive Combined Airspace and Non-Terrestrial Network Architecture,” IEEE Wireless Communications, vol. 32, no. 5, pp. 204–211, 2025.</span></div><div class="pub-item"><strong>Mobility Management for Cellular-Connected UAVs: Model-Based Versus Learning-Based Approaches for Service Availability,</strong><span class="muted">17. I. A. Meer, M. Ozger, D. Schupke, and C. Cavdar, “Mobility Management for Cellular-Connected UAVs: Model-Based Versus Learning-Based Approaches for Service Availability,” IEEE Transactions on Network and Service Management, vol. 21, no. 2, pp. 2125–2139, 2024.</span></div><div class="pub-item"><strong>A Survey of Wireless Networks for Future Aerial Communications (FACOM),</strong><span class="muted">24. A. Baltaci, E. Dinc, M. Ozger, A. Alabbasi, C. Cavdar, and D. Schupke, “A Survey of Wireless Networks for Future Aerial Communications (FACOM),” IEEE Communications Surveys & Tutorials, vol. 23, no. 4, pp. 2833–2884, 2021.</span></div><div class="pub-item"><strong>Risk-Aware Resource Allocation for URLLC: Challenges and Strategies with Machine Learning,</strong><span class="muted">28. A. Azari, M. Ozger, and C. Cavdar, “Risk-Aware Resource Allocation for URLLC: Challenges and Strategies with Machine Learning,” IEEE Communications Magazine, vol. 57, no. 3, pp. 42–48, Mar. 2019.</span></div>
         </div>
+        <p style="margin-top:16px;"><a href="publications.html">See full publication list →</a></p>
       </div>
     </section>
 
     <section id="experience">
-      <div class="panel section-card">
+      <div class="section-card">
         <div class="section-head">
-          <div>
-            <h2>Academic Experience</h2>
-          </div>
-          <p>Appointments, education, and project leadership highlights.</p>
+          <h2>Experience</h2>
+          <p>Appointments, project leadership, teaching, and service.</p>
         </div>
-
         <div class="timeline">
-          <article class="timeline-item">
-            <div class="time">Sep. 2024 – Present</div>
-            <div>
-              <h3>Assistant Professor</h3>
-              <div class="sub">Aalborg University, Copenhagen, Denmark</div>
-              <p>
-                Research and teaching in wireless communications, networking, IoT, and machine learning for communication systems.
-                Course responsible and teacher across Probability and Statistics, IoT, Computer Architecture and Operating Systems,
-                Mobile Communication Systems, and AI & Advanced Machine Learning.
-              </p>
-            </div>
-          </article>
-
-          <article class="timeline-item">
-            <div class="time">Jan. 2018 – Present</div>
-            <div>
-              <h3>Researcher</h3>
-              <div class="sub">KTH Royal Institute of Technology, Stockholm, Sweden</div>
-              <p>
-                Research on aerial communications and networking, non-terrestrial networks, wireless power transfer, machine learning,
-                and IoT, together with technical coordination and project leadership in academic–industry collaborations.
-              </p>
-            </div>
-          </article>
-
-          <article class="timeline-item">
-            <div class="time">Sep. 2011 – Dec. 2017</div>
-            <div>
-              <h3>Research and Teaching Assistant</h3>
-              <div class="sub">Koç University, Istanbul, Turkey</div>
-              <p>
-                Conducted doctoral research in next-generation cognitive wireless networks and supported teaching activities in
-                electrical and electronics engineering.
-              </p>
-            </div>
-          </article>
-
-          <article class="timeline-item">
-            <div class="time">Education</div>
-            <div>
-              <h3>Ph.D., M.Sc., and B.S. in Electrical & Electronics Engineering</h3>
-              <div class="sub">Koç University · Middle East Technical University</div>
-              <p>
-                Ph.D. and M.Sc. from Koç University; B.S. from Middle East Technical University, graduating among the top students
-                of the class.
-              </p>
-            </div>
-          </article>
-        </div>
-
-        <div class="grid-3" style="margin-top:12px;">
-          <article class="feature">
-            <h3>3D-NET</h3>
-            <p>
-              Technical coordination and proposal leadership in a CELTIC-NEXT project of approximately EUR 14M involving
-              20+ partner entities across 8 countries.
-            </p>
-          </article>
-          <article class="feature">
-            <h3>6G-SKY</h3>
-            <p>
-              Project management and technical coordination for a CELTIC-NEXT initiative on integrated terrestrial and
-              non-terrestrial networks.
-            </p>
-          </article>
-          <article class="feature">
-            <h3>Industrial projects</h3>
-            <p>
-              Bilateral work with Airbus and broader collaboration with major industrial stakeholders in future connectivity systems.
-            </p>
-          </article>
+          <div class="timeline-item">
+            <div class="timeline-time">Sep. 2024–Present</div>
+            <div><h3>Assistant Professor, Aalborg University</h3><p>Research and teaching in wireless communications, networking, Internet of Things, and machine learning for communication systems.</p></div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-time">Jan. 2018–Present</div>
+            <div><h3>Researcher, KTH Royal Institute of Technology</h3><p>Research on aerial communications and networking, non-terrestrial networks, wireless power transfer, machine learning, and IoT, together with technical coordination in academic–industry collaborations.</p></div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-time">Dec. 2025–Nov. 2027</div>
+            <div><h3>3D-NET</h3><p>Technical coordination and proposal leadership in a CELTIC-NEXT project with 20+ partner entities across 8 countries.</p></div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-time">May 2022–Apr. 2025</div>
+            <div><h3>6G-SKY</h3><p>Project management and technical coordination for integrated terrestrial and non-terrestrial network research and stakeholder engagement.</p></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="teaching">
-      <div class="panel section-card">
+    <section id="opportunities">
+      <div class="section-card opportunity">
         <div class="section-head">
-          <div>
-            <h2>Teaching & Supervision</h2>
-          </div>
-          <p>Representative teaching responsibilities and supervision profile across BSc, MSc, PhD, postdoctoral, and research-engineering levels.</p>
+          <h2>Opportunities for students and postdocs</h2>
+          <p>A dedicated section for highly motivated candidates interested in collaboration.</p>
         </div>
-
-        <div class="mini-cards">
-          <article class="mini">
-            <h3>Teaching at Aalborg University</h3>
-            <p>
-              Course responsible or teacher in AI and Advanced Machine Learning, Probability and Statistics, Internet of Things,
-              Computer Architecture and Operating Systems, Internetworking and Web-Programming, and Mobile Communication Systems.
-            </p>
-          </article>
-          <article class="mini">
-            <h3>Teaching at KTH</h3>
-            <p>
-              Teaching and coordination in Wireless Networks, Internet of Things, project courses, and research methodology and scientific writing.
-            </p>
-          </article>
-          <article class="mini">
-            <h3>Doctoral and postdoctoral supervision</h3>
-            <p>
-              Co-advising postdoctoral researchers and PhD students on machine learning algorithms for wireless networks,
-              NTN architecture and design, AI-based network management, and reliability in aerial and vehicular systems.
-            </p>
-          </article>
-          <article class="mini">
-            <h3>MSc/BSc and research engineering mentoring</h3>
-            <p>
-              Supervision across topics including UAV mobility management, LEO satellite connectivity, interference management,
-              localisation, wireless power transfer, edge services, and network traffic prediction.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="service">
-      <div class="panel section-card">
-        <div class="section-head">
-          <div>
-            <h2>Service, Leadership & Recognition</h2>
-          </div>
-          <p>Selected editorial, organisational, and professional activities.</p>
-        </div>
-
         <div class="grid-2">
-          <article class="feature">
-            <h3>Editorial and professional service</h3>
+          <div class="contact-box">
+            <h3>Prospective students</h3>
+            <p>I welcome inquiries from highly motivated BSc, MSc, and PhD students interested in wireless communications, non-terrestrial networks, machine learning for engineering systems, reinforcement learning, localisation, and network management.</p>
             <ul>
-              <li>Associate Editor, IEEE Transactions on Vehicular Technology.</li>
-              <li>Associate Editor, IEEE Transactions on Mobile Computing.</li>
-              <li>TPC Co-Chair, IEEE CCNC 2027 NTN track.</li>
-              <li>Scientific Advisory Board Member, SMART 6G-SAT Center.</li>
-              <li>Workshop and tutorial organiser at EuCNC, VTC-Spring, and PIMRC.</li>
+              <li>A short motivation describing your research interests.</li>
+              <li>Your CV and current academic status.</li>
+              <li>Transcripts, project summary, or links to code/papers if available.</li>
             </ul>
-          </article>
-          <article class="feature">
-            <h3>Selected honors and awards</h3>
+          </div>
+          <div class="contact-box">
+            <h3>Prospective postdocs</h3>
+            <p>I am also interested in hearing from postdoctoral candidates whose background aligns with 5G/6G systems, NTN, AI-native networking, learning-based control, communication theory, or reliable inference for engineering applications.</p>
             <ul>
-              <li>Best Paper Award, IEEE ASMS/SPSC 2025.</li>
-              <li>Best Paper Award, IEEE ISCC 2016.</li>
-              <li>Exemplary Reviewer, IEEE Communications Letters, 2017.</li>
-              <li>National Graduate Scholarship, TÜBİTAK.</li>
-              <li>Merit-Based Full Scholarship, Koç University.</li>
+              <li>Please include a concise research statement.</li>
+              <li>Indicate how your expertise fits ongoing or future projects.</li>
+              <li>Relevant publications or preprints are useful.</li>
             </ul>
-          </article>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="contact">
-      <div class="panel section-card">
+      <div class="section-card">
         <div class="section-head">
-          <div>
-            <h2>Contact</h2>
-          </div>
-          <p>For research collaboration, supervision enquiries, invited talks, and academic correspondence.</p>
+          <h2>Contact</h2>
+          <p>For collaboration, supervision, invited talks, project discussions, or student/postdoc interest.</p>
         </div>
-
         <div class="grid-2">
-          <article class="feature">
-            <h3>Primary affiliation</h3>
-            <p>
-              Department of Electronic Systems<br />
-              Aalborg University, Copenhagen, Denmark
-            </p>
-            <p style="margin-top:10px;">
-              Email: <a href="mailto:mozger@es.aau.dk">mozger@es.aau.dk</a><br />
-              ORCID: <a href="https://orcid.org/0000-0001-8517-7996" target="_blank" rel="noopener">0000-0001-8517-7996</a>
-            </p>
-          </article>
-          <article class="feature">
-            <h3>Additional profiles</h3>
-            <p>
-              <a href="https://scholar.google.com/citations?hl=en&user=sfnbK9cAAAAJ" target="_blank" rel="noopener">Google Scholar</a><br />
-              <a href="https://vbn.aau.dk/en/persons/mozger/" target="_blank" rel="noopener">AAU Research Portal</a><br />
-              <a href="https://www.kth.se/profile/ozger?l=en" target="_blank" rel="noopener">KTH Profile</a>
-            </p>
-          </article>
+          <div class="card">
+            <h3>Primary contact</h3>
+            <p><strong>Mustafa Özger</strong><br>
+            Department of Electronic Systems<br>
+            Aalborg University, Copenhagen, Denmark</p>
+            <p>Email: <a href="mailto:mozger@es.aau.dk">mozger@es.aau.dk</a><br>
+            ORCID: <a href="https://orcid.org/0000-0001-8517-7996" target="_blank" rel="noopener">0000-0001-8517-7996</a></p>
+          </div>
+          <div class="card">
+            <h3>Profiles</h3>
+            <p><a href="https://scholar.google.com/citations?hl=en&user=sfnbK9cAAAAJ" target="_blank" rel="noopener">Google Scholar</a><br>
+            <a href="https://vbn.aau.dk/en/persons/mozger/" target="_blank" rel="noopener">AAU profile</a><br>
+            <a href="https://www.kth.se/profile/ozger?l=en" target="_blank" rel="noopener">KTH profile</a><br>
+            <a href="assets/CV_Mustafa_Ozger.pdf" target="_blank" rel="noopener">Curriculum vitae</a></p>
+          </div>
         </div>
       </div>
     </section>
+
+    <div class="footer">
+      This version is configured to use <code>assets/ozger.jpg</code> automatically if you add your photo to the website folder. Otherwise it falls back to the placeholder image.
+    </div>
   </main>
 
-  <footer>
-    <div class="wrap">
-      © Mustafa Özger
-    </div>
-  </footer>
-
   <script>
-    const navLinks = [...document.querySelectorAll('.nav a')];
-    const sections = navLinks
-      .map(link => document.querySelector(link.getAttribute('href')))
-      .filter(Boolean);
-
-    const setActive = () => {
-      const y = window.scrollY + 120;
+    const links = [...document.querySelectorAll('.nav a')];
+    const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+    function setActive() {
+      const y = window.scrollY + 110;
       let current = sections[0];
-      for (const section of sections) {
-        if (section.offsetTop <= y) current = section;
-      }
-      navLinks.forEach(link => {
-        const active = link.getAttribute('href') === '#' + current.id;
-        link.classList.toggle('active', active);
-      });
-    };
-
+      for (const section of sections) if (section.offsetTop <= y) current = section;
+      links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current.id));
+    }
     setActive();
-    window.addEventListener('scroll', setActive, { passive: true });
+    window.addEventListener('scroll', setActive, {passive:true});
   </script>
 </body>
 </html>
